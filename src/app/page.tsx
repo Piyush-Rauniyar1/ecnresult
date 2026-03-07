@@ -1,7 +1,10 @@
 import ConstituencySelector from '@/components/ConstituencySelector';
 import PartyStandings from '@/components/PartyStandings';
 import NationalProgressChart from '@/components/NationalProgressChart';
-import WinnerMap from '@/components/WinnerMap';
+import dynamicImport from 'next/dynamic';
+
+const WinnerMap = dynamicImport(() => import('@/components/WinnerMap'), { ssr: false });
+
 import EpicCenter from '@/components/EpicCenter';
 import { supabase } from '@/lib/supabase';
 

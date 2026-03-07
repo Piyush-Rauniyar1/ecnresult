@@ -1,11 +1,9 @@
 'use client';
 
 import { useEffect, useState, useMemo, useRef } from 'react';
-import * as d3Geo from 'd3-geo';
-import * as d3Zoom from 'd3-zoom';
-import * as d3Selection from 'd3-selection';
-import * as d3Transition from 'd3-transition';
 import { supabaseBrowser } from '@/lib/supabase';
+import 'leaflet/dist/leaflet.css';
+import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
 
 interface ConstituencyWinner {
     constituency_id: number;
@@ -29,19 +27,14 @@ export default function WinnerMap() {
     const [constituencyData, setConstituencyData] = useState<Record<string, ConstituencyData>>({});
     const [loading, setLoading] = useState(true);
     const [hoveredPolygon, setHoveredPolygon] = useState<any>(null);
-    const [transform, setTransform] = useState({ k: 1, x: 0, y: 0 });
-    const svgRef = useRef<SVGSVGElement>(null);
-    const zoomRef = useRef<any>(null);
 
     useEffect(() => {
         async function loadData() {
             try {
-                // 1. Fetch 165 Constituency GeoJSON from public folder
                 const geoRes = await fetch('/nepal-165-constituencies.geojson');
                 const geo = await geoRes.json();
                 setGeoData(geo);
 
-                // 2. Fetch all constituency-level winners
                 const { data: winners } = await supabaseBrowser
                     .from('results')
                     .select(`
@@ -79,7 +72,6 @@ export default function WinnerMap() {
 
                         if (!distName || !constId || !constNum) return;
 
-                        // Normalize mismatching district names (e.g. database has 'eastern rukum', geojson has 'rukum east')
                         if (NAME_ALIASES[distName]) {
                             distName = NAME_ALIASES[distName];
                         }
@@ -102,9 +94,7 @@ export default function WinnerMap() {
                         };
                     });
 
-                    // Add inverse alias support just in case GeoJSON uses DB names
                     Object.entries(NAME_ALIASES).forEach(([dbName, geoName]) => {
-                        // For every constNum 1..5, mirror the key
                         for (let i = 1; i <= 6; i++) {
                             if (mapped[`${dbName}_${i}`] && !mapped[`${geoName}_${i}`]) {
                                 mapped[`${geoName}_${i}`] = mapped[`${dbName}_${i}`];
@@ -114,9 +104,6 @@ export default function WinnerMap() {
                             }
                         }
                     });
-
-                    console.log("CHITWAN MAP DATA (GeoJSON Key):", mapped['chitawan_2']);
-                    console.log("CHITWAN MAP DATA (DB Key):", mapped['chitwan_2']);
 
                     setConstituencyData(mapped);
                 }
@@ -129,165 +116,115 @@ export default function WinnerMap() {
         loadData();
     }, []);
 
-    // Setup d3-zoom
-    useEffect(() => {
-        if (!svgRef.current || loading) return;
+    const getFeatureStyle = (feature: any) => {
+        let districtName = feature.properties.DIST_EN || feature.properties.DISTRICT || feature.properties.name || '';
+        districtName = districtName.toLowerCase();
+        const conNum = feature.properties.CON;
 
-        const svg = d3Selection.select(svgRef.current);
-        const zoom = d3Zoom.zoom<SVGSVGElement, unknown>()
-            .scaleExtent([1, 8])
-            .on('zoom', (event: any) => {
-                setTransform(event.transform);
-            });
+        if (districtName.includes('national') || districtName.includes('park')) {
+            return { weight: 0, fillOpacity: 0 };
+        }
 
-        svg.call(zoom);
-        zoomRef.current = zoom;
-    }, [loading]);
+        const key = `${districtName}_${conNum}`;
+        const data = constituencyData[key];
+        const fillColor = data ? data.winner.party_color : '#f1f5f9';
 
-    const handleZoomIn = () => {
-        if (!svgRef.current || !zoomRef.current) return;
-        d3Selection.select(svgRef.current).transition().duration(300).call(zoomRef.current.scaleBy, 1.5);
-    };
-    const handleZoomOut = () => {
-        if (!svgRef.current || !zoomRef.current) return;
-        d3Selection.select(svgRef.current).transition().duration(300).call(zoomRef.current.scaleBy, 0.67);
-    };
-    const handleZoomReset = () => {
-        if (!svgRef.current || !zoomRef.current) return;
-        d3Selection.select(svgRef.current).transition().duration(300).call(zoomRef.current.transform, d3Zoom.zoomIdentity);
+        return {
+            fillColor: fillColor,
+            weight: 1,
+            opacity: 1,
+            color: 'white',
+            fillOpacity: 0.7
+        };
     };
 
-    const mapElements = useMemo(() => {
-        if (!geoData) return null;
+    const onEachFeature = (feature: any, layer: any) => {
+        let districtName = feature.properties.DIST_EN || feature.properties.DISTRICT || feature.properties.name || '';
+        districtName = districtName.toLowerCase();
+        const conNum = feature.properties.CON;
 
-        const width = 800;
-        const height = 450;
-        const projection = d3Geo.geoMercator().fitSize([width, height], geoData);
-        const pathGenerator = d3Geo.geoPath().projection(projection);
+        if (districtName.includes('national') || districtName.includes('park')) return;
 
-        return geoData.features.map((feature: any, i: number) => {
-            let districtName = feature.properties.DIST_EN || feature.properties.DISTRICT || feature.properties.name || '';
-            districtName = districtName.toLowerCase();
-            const conNum = feature.properties.CON;
+        layer.on({
+            mouseover: (e: any) => {
+                const layer = e.target;
+                layer.setStyle({
+                    fillOpacity: 0.9,
+                    weight: 2
+                });
 
-            // Skip rendering "National Parks" as it overlays and obscures actual constituencies like Chitwan
-            if (districtName.includes('national') || districtName.includes('park')) return null;
+                let displayDistrict = districtName.toUpperCase();
+                if (displayDistrict === 'CHITAWAN') displayDistrict = 'CHITWAN';
+                if (displayDistrict === 'RUKUM_E') displayDistrict = 'EASTERN RUKUM';
+                if (displayDistrict === 'RUKUM_W') displayDistrict = 'WESTERN RUKUM';
+                if (displayDistrict === 'NAWALPARASI_E') displayDistrict = 'EASTERN NAWALPARASI';
+                if (displayDistrict === 'NAWALPARASI_W') displayDistrict = 'WESTERN NAWALPARASI';
 
-            const key = `${districtName}_${conNum}`;
-            const data = constituencyData[key];
-            const fillColor = data ? data.winner.party_color : '#f1f5f9';
-            const centroid = pathGenerator.centroid(feature);
+                const key = `${districtName}_${conNum}`;
+                const data = constituencyData[key];
 
-            // Determine Symbol to show on the physical polygon
-            let symbolUrl = data?.winner.party_logo || '';
-            if (!symbolUrl && data) {
-                const name = data.winner.party_name.toLowerCase();
-                if (name.includes('congress')) symbolUrl = '🌳';
-                else if (name.includes('swatantra') || name.includes('rsp')) symbolUrl = '🔔';
-                else if (name.includes('uml') || name.includes('communist party of nepal')) symbolUrl = '☀️';
-                else if (name.includes('maoist') || name.includes('नेपाली कम्युनिष्ट')) symbolUrl = '⭐️';
+                setHoveredPolygon({
+                    displayTitle: `${displayDistrict} - ${conNum}`,
+                    data: data,
+                    x: e.originalEvent.clientX,
+                    y: e.originalEvent.clientY
+                });
+            },
+            mouseout: (e: any) => {
+                const layer = e.target;
+                layer.setStyle({
+                    fillOpacity: 0.7,
+                    weight: 1
+                });
+                setHoveredPolygon(null);
             }
-
-            return (
-                <g key={`${districtName}_${conNum}_${i}`}>
-                    <path
-                        d={pathGenerator(feature) || ''}
-                        fill={fillColor}
-                        stroke="#ffffff"
-                        strokeWidth={0.5 / transform.k}
-                        className="cursor-pointer hover:opacity-90 transition-opacity"
-                        onMouseEnter={(e) => {
-                            let displayDistrict = districtName.toUpperCase();
-                            if (displayDistrict === 'CHITAWAN') displayDistrict = 'CHITWAN';
-                            if (displayDistrict === 'RUKUM_E') displayDistrict = 'EASTERN RUKUM';
-                            if (displayDistrict === 'RUKUM_W') displayDistrict = 'WESTERN RUKUM';
-                            if (displayDistrict === 'NAWALPARASI_E') displayDistrict = 'EASTERN NAWALPARASI';
-                            if (displayDistrict === 'NAWALPARASI_W') displayDistrict = 'WESTERN NAWALPARASI';
-
-                            setHoveredPolygon({
-                                displayTitle: `${displayDistrict} - ${conNum}`,
-                                data: data,
-                                x: e.clientX,
-                                y: e.clientY
-                            });
-                        }}
-                        onMouseLeave={() => setHoveredPolygon(null)}
-                    />
-                    {symbolUrl && centroid[0] && centroid[1] && transform.k > 1.5 && ( // Only show symbols if zoomed in enough since polygons are tiny
-                        <g transform={`translate(${centroid[0]},${centroid[1]})`}>
-                            {symbolUrl.startsWith('http') ? (
-                                <image
-                                    href={symbolUrl}
-                                    x={-4 / Math.sqrt(transform.k)}
-                                    y={-4 / Math.sqrt(transform.k)}
-                                    width={8 / Math.sqrt(transform.k)}
-                                    height={8 / Math.sqrt(transform.k)}
-                                    className="pointer-events-none opacity-80"
-                                    preserveAspectRatio="xMidYMid meet"
-                                />
-                            ) : (
-                                <text
-                                    textAnchor="middle"
-                                    dominantBaseline="central"
-                                    fontSize={6 / Math.sqrt(transform.k)}
-                                    className="pointer-events-none drop-shadow-sm opacity-80"
-                                >
-                                    {symbolUrl}
-                                </text>
-                            )}
-                        </g>
-                    )}
-                </g>
-            );
         });
-    }, [geoData, constituencyData, transform.k]);
+    };
 
     if (loading) {
         return (
             <div className="bg-white rounded-2xl border border-gray-100 p-8 h-[500px] flex items-center justify-center animate-pulse">
                 <div className="text-center">
                     <div className="w-12 h-12 border-4 border-indigo-600/30 border-t-indigo-600 rounded-full animate-spin mx-auto mb-4" />
-                    <p className="text-gray-400 font-medium">Loading precise 165-constituency map...</p>
+                    <p className="text-gray-400 font-medium">Loading OSM Map Data...</p>
                 </div>
             </div>
         );
     }
 
+    // Default center to Nepal
+    const nepalCenter: [number, number] = [28.3949, 84.1240];
+
     return (
         <div className="relative bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden p-4">
-            <div className="flex items-center justify-between mb-6 px-4">
+            <div className="flex items-center justify-between mb-4 px-4">
                 <div>
                     <h3 className="text-gray-900 font-black text-xl">165 Constituency Extent Map</h3>
-                    <p className="text-gray-500 text-xs">Use +/− to zoom • Drag to pan • Hover a seat for winner context</p>
-                </div>
-                <div className="flex gap-4">
-                    <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-slate-100 border border-slate-200" />
-                        <span className="text-[10px] font-bold text-gray-400">Undecided</span>
-                    </div>
+                    <p className="text-gray-500 text-xs">Hover a seat for winner context</p>
                 </div>
             </div>
 
-            <div className="relative overflow-hidden cursor-move touch-none bg-slate-50/50 rounded-xl">
-                <svg ref={svgRef} viewBox="0 0 800 450" className="w-full h-auto drop-shadow-sm">
-                    <g transform={`translate(${transform.x},${transform.y}) scale(${transform.k})`}>
-                        {mapElements}
-                    </g>
-                </svg>
-
-                {/* Zoom Controls */}
-                <div className="absolute top-4 left-4 flex flex-col gap-1.5 pointer-events-none">
-                    <button className="pointer-events-auto w-9 h-9 bg-white border border-gray-200 rounded-lg shadow-md flex items-center justify-center font-bold text-xl text-gray-700 hover:bg-gray-50 active:scale-95 transition-all" onClick={handleZoomIn} title="Zoom In">+</button>
-                    <button className="pointer-events-auto w-9 h-9 bg-white border border-gray-200 rounded-lg shadow-md flex items-center justify-center font-bold text-xl text-gray-700 hover:bg-gray-50 active:scale-95 transition-all" onClick={handleZoomOut} title="Zoom Out">−</button>
-                    <button className="pointer-events-auto w-9 h-9 bg-white border border-gray-200 rounded-lg shadow-md flex items-center justify-center font-bold text-sm text-gray-600 hover:bg-gray-50 active:scale-95 transition-all" onClick={handleZoomReset} title="Reset Zoom">↺</button>
-                </div>
+            <div className="relative overflow-hidden bg-slate-50/50 rounded-xl" style={{ height: '450px' }}>
+                <MapContainer center={nepalCenter} zoom={6} style={{ height: '100%', width: '100%', borderRadius: '0.75rem' }} scrollWheelZoom={false}>
+                    <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    {geoData && (
+                        <GeoJSON
+                            data={geoData}
+                            style={getFeatureStyle}
+                            onEachFeature={onEachFeature}
+                        />
+                    )}
+                </MapContainer>
 
                 {/* Tooltip */}
                 {hoveredPolygon && (
                     <div
                         className="fixed pointer-events-none bg-white/95 backdrop-blur-md border border-gray-200 p-3 rounded-xl shadow-2xl z-50 min-w-[200px]"
                         style={{
-                            left: Math.min(hoveredPolygon.x + 20, window.innerWidth - 240),
+                            left: Math.min(hoveredPolygon.x + 20, typeof window !== 'undefined' ? window.innerWidth - 240 : 1000),
                             top: Math.max(hoveredPolygon.y - 40, 10)
                         }}
                     >
@@ -302,43 +239,32 @@ export default function WinnerMap() {
                                     </div>
                                 )}
                                 <div className="min-w-0 flex-1">
-                                    <div className="flex items-center gap-1.5 mb-0.5">
+                                    <h4 className="font-bold text-gray-900 text-sm truncate">{hoveredPolygon.data.winner.candidate_name}</h4>
+                                    <div className="flex items-center gap-1.5 mt-0.5">
                                         <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: hoveredPolygon.data.winner.party_color }} />
-                                        <p className="text-[10px] font-bold truncate uppercase tracking-wide" style={{ color: hoveredPolygon.data.winner.party_color }}>
-                                            {hoveredPolygon.data.winner.party_name}
-                                        </p>
+                                        <span className="text-[10px] text-gray-500 font-semibold truncate uppercase tracking-tight">{hoveredPolygon.data.winner.party_name}</span>
                                     </div>
-                                    <p className="text-xs font-bold text-gray-900 leading-tight">
-                                        {hoveredPolygon.data.winner.candidate_name}
-                                    </p>
+                                </div>
+                                <div className="text-right pl-3 border-l border-gray-100">
+                                    <p className="text-[10px] text-gray-400 font-medium uppercase mb-0.5">Votes</p>
+                                    <p className="font-black text-gray-900 text-sm">{hoveredPolygon.data.winner.votes.toLocaleString()}</p>
                                 </div>
                             </div>
                         ) : (
-                            <p className="text-[10px] text-gray-400 italic">Counting in progress or Not declared...</p>
+                            <div className="flex flex-col items-center justify-center py-4 text-center">
+                                <span className="text-2xl mb-1 opacity-50">🗳️</span>
+                                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Awaiting Results</p>
+                            </div>
                         )}
                     </div>
                 )}
             </div>
 
-            <div className="mt-4 px-4 pb-2 flex flex-wrap gap-x-6 gap-y-2">
-                {/* Generated Unique Parties Legend */}
-                {Array.from(new Set(Object.values(constituencyData).map(d => JSON.stringify({ name: d.winner.party_name, color: d.winner.party_color, logo: d.winner.party_logo }))))
-                    .slice(0, 8)
-                    .map(json => {
-                        const p = JSON.parse(json);
-                        return (
-                            <div key={p.name} className="flex items-center gap-2">
-                                <div className="w-2.5 h-2.5 rounded-full shadow-sm" style={{ backgroundColor: p.color }} />
-                                <div className="flex items-center gap-1">
-                                    {p.logo && p.logo.startsWith('http') ? (
-                                        <img src={p.logo} alt={p.name} className="w-4 h-4 object-contain opacity-80" />
-                                    ) : null}
-                                    <span className="text-[10px] font-black text-gray-600 uppercase tracking-wider">{p.name}</span>
-                                </div>
-                            </div>
-                        );
-                    })
-                }
+            <div className="mt-6 flex flex-wrap gap-4 px-4 justify-center items-center">
+                <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full border border-gray-200 bg-slate-100" />
+                    <span className="text-[10px] font-bold text-gray-500">UNDECIDED</span>
+                </div>
             </div>
         </div>
     );
