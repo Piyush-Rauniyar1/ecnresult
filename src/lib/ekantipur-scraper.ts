@@ -230,3 +230,15 @@ export async function runSingleScrape(constId: number) {
     if (!c) return { error: 'Not found' };
     return await scrapeConstituency(supabase, c);
 }
+
+// Execute directly if run via CLI (e.g. from GitHub Actions)
+if (typeof require !== 'undefined' && require.main === module || (typeof process !== 'undefined' && process.argv[1]?.includes('ekantipur-scraper'))) {
+    console.log("🚀 Starting standalone Ekantipur scraper...");
+    runScraper().then(res => {
+        console.log("✅ Scraping finished successfully:", res);
+        process.exit(0);
+    }).catch(err => {
+        console.error("❌ Fatal scraper error:", err);
+        process.exit(1);
+    });
+}
