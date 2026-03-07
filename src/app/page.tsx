@@ -124,8 +124,30 @@ export default async function Home() {
 
       </div>
 
-      <div className="text-center pb-10 text-gray-400 text-xs">
-        Data sourced automatically · For demonstration purposes only
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-4">
+        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
+          <div className="flex items-center gap-2">
+            <span>🔴 Live Election Data sourced from</span>
+            <a href="https://election.ekantipur.com" target="_blank" rel="noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline font-bold transition-colors">
+              eKantipur
+            </a>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span>🗺️ Map GeoJSON from</span>
+            <a href="https://github.com/mesaugat/geoJSON-Nepal" target="_blank" rel="noreferrer" className="text-indigo-600 hover:text-indigo-800 hover:underline font-bold transition-colors">
+              mesaugat/geoJSON-Nepal
+            </a>
+            <span>&amp;</span>
+            <a href="https://github.com/opentechcommunity/map-of-nepal" target="_blank" rel="noreferrer" className="text-indigo-600 hover:text-indigo-800 hover:underline font-bold transition-colors">
+              opentechcommunity
+            </a>
+          </div>
+
+          <div className="text-slate-400">
+            For demonstration and educational purposes only
+          </div>
+        </div>
       </div>
     </div>
   );
