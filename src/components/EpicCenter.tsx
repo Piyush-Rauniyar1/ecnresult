@@ -34,7 +34,11 @@ export default function EpicCenter() {
                 )
             `;
 
-            const epicNames = ['Jhapa-5', 'Sunsari-1'];
+            const epicNames = [
+                'Jhapa-5', 'Sunsari-1', 'Gulmi-1', 'Bhaktapur-2',
+                'Rautahat-1', 'Lalitpur-3', 'Siraha-1', 'Tanahun-1',
+                'Gorkha-1', 'Sarlahi-4'
+            ];
 
             const [epicRes, latestRes] = await Promise.all([
                 supabaseBrowser
@@ -45,7 +49,7 @@ export default function EpicCenter() {
                     .from('constituencies')
                     .select(selectQuery)
                     .order('id', { ascending: false })
-                    .limit(6)
+                    .limit(10) // fetch more latest to fill in gaps
             ]);
 
             const combined = [...(epicRes.data || [])];
@@ -55,7 +59,7 @@ export default function EpicCenter() {
             });
 
             if (combined.length > 0) {
-                const items: FeedItem[] = combined.slice(0, 8).map((c: any) => {
+                const items: FeedItem[] = combined.slice(0, 12).map((c: any) => {
                     const winnerRow = c.results?.find((r: any) => r.is_winner);
                     return {
                         id: c.id,
