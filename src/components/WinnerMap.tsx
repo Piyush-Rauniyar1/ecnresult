@@ -191,8 +191,15 @@ export default function WinnerMap() {
                         strokeWidth={0.5 / transform.k}
                         className="cursor-pointer hover:opacity-90 transition-opacity"
                         onMouseEnter={(e) => {
+                            let displayDistrict = districtName.toUpperCase();
+                            if (displayDistrict === 'CHITAWAN') displayDistrict = 'CHITWAN';
+                            if (displayDistrict === 'RUKUM_E') displayDistrict = 'EASTERN RUKUM';
+                            if (displayDistrict === 'RUKUM_W') displayDistrict = 'WESTERN RUKUM';
+                            if (displayDistrict === 'NAWALPARASI_E') displayDistrict = 'EASTERN NAWALPARASI';
+                            if (displayDistrict === 'NAWALPARASI_W') displayDistrict = 'WESTERN NAWALPARASI';
+
                             setHoveredPolygon({
-                                displayTitle: `${districtName.toUpperCase()} - ${conNum}`,
+                                displayTitle: `${displayDistrict} - ${conNum}`,
                                 data: data,
                                 x: e.clientX,
                                 y: e.clientY
