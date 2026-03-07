@@ -25,8 +25,15 @@ const PROVINCE_SLUGS = {
 };
 
 function makeDistrictSlug(name: string) {
-    return 'district-' + name
-        .toLowerCase()
+    let lowerName = name.toLowerCase();
+
+    // Ekantipur misspellings / mismatches
+    if (lowerName === 'rautahat') return 'district-rauthat';
+    if (lowerName === 'makwanpur') return 'district-makawanpur';
+    if (lowerName === 'sindhupalchok') return 'district-sindhupalchowk';
+    if (lowerName === 'kavrepalanchok') return 'district-kavrepalanchowk';
+
+    return 'district-' + lowerName
         .replace(/\s+/g, '-')
         .replace(/[()]/g, '');
 }
