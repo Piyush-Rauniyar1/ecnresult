@@ -1,0 +1,880 @@
+province,province_no,district,constituency_id,constituency_name,party,candidate_name,is_independent
+Koshi,1,Taplejung,1,Taplejung-1,RSP,Birendra Shrestha,FALSE
+Koshi,1,Taplejung,1,Taplejung-1,NC,Gajendra Tumyahang,FALSE
+Koshi,1,Taplejung,1,Taplejung-1,UML,Kshitij Thebe,FALSE
+Koshi,1,Taplejung,1,Taplejung-1,NCP,Khel Prasad Budhathoki,FALSE
+Koshi,1,Taplejung,1,Taplejung-1,RPP,Indra Prasad Thapa,FALSE
+Koshi,1,Panchthar,2,Panchthar-1,RSP,Mahendra Bikram Thamsuhang,FALSE
+Koshi,1,Panchthar,2,Panchthar-1,NC,Narendra Kerung,FALSE
+Koshi,1,Panchthar,2,Panchthar-1,UML,Aiendra Sundar Nembang,FALSE
+Koshi,1,Panchthar,2,Panchthar-1,NCP,Harka Bahadur Nembang,FALSE
+Koshi,1,Panchthar,2,Panchthar-1,RPP,Tej Kerumbang,FALSE
+Koshi,1,Ilam,3,Ilam-1,RSP,Bimal Gadaal,FALSE
+Koshi,1,Ilam,3,Ilam-1,NC,Niskal Rai,FALSE
+Koshi,1,Ilam,3,Ilam-1,UML,Kajiman Kagate,FALSE
+Koshi,1,Ilam,3,Ilam-1,NCP,Rana Bahadur Rai,FALSE
+Koshi,1,Ilam,3,Ilam-1,RPP,Jwala Nepal Dahal,FALSE
+Koshi,1,Ilam,4,Ilam-2,RSP,Gokul Bahadur Rai,FALSE
+Koshi,1,Ilam,4,Ilam-2,NC,Bhesraj Acharaya,FALSE
+Koshi,1,Ilam,4,Ilam-2,UML,Suhang Nembang,FALSE
+Koshi,1,Ilam,4,Ilam-2,NCP,Om Bahadur Gurung,FALSE
+Koshi,1,Ilam,4,Ilam-2,RPP,Ganesh Prasad Dulal,FALSE
+Koshi,1,Jhapa,5,Jhapa-1,RSP,Nisha Dangi,FALSE
+Koshi,1,Jhapa,5,Jhapa-1,NC,Keshab Raj Pandey,FALSE
+Koshi,1,Jhapa,5,Jhapa-1,UML,Ram Chandra Upreti,FALSE
+Koshi,1,Jhapa,5,Jhapa-1,NCP,Ashesh Ghimire,FALSE
+Koshi,1,Jhapa,5,Jhapa-1,RPP,Hemraj Karki,FALSE
+Koshi,1,Jhapa,6,Jhapa-2,RSP,Indira Rana Magar,FALSE
+Koshi,1,Jhapa,6,Jhapa-2,NC,Sarita Prasai,FALSE
+Koshi,1,Jhapa,6,Jhapa-2,UML,Devraj Ghimire,FALSE
+Koshi,1,Jhapa,6,Jhapa-2,NCP,Dharmashila Chapagain,FALSE
+Koshi,1,Jhapa,6,Jhapa-2,RPP,Swagat Nepal,FALSE
+Koshi,1,Jhapa,6,Jhapa-2,JP,Ramesh Kumar Rajbanshi,FALSE
+Koshi,1,Jhapa,7,Jhapa-3,RSP,Prakash Pathak,FALSE
+Koshi,1,Jhapa,7,Jhapa-3,NC,Rajendra Ghimire,FALSE
+Koshi,1,Jhapa,7,Jhapa-3,UML,Harilal Rajbanshi,FALSE
+Koshi,1,Jhapa,7,Jhapa-3,NCP,Dilli Ghimire,FALSE
+Koshi,1,Jhapa,7,Jhapa-3,RPP,Rajendra Prasad Lingden,FALSE
+Koshi,1,Jhapa,7,Jhapa-3,JP,Bharat Lal Rajbanshi,FALSE
+Koshi,1,Jhapa,8,Jhapa-4,RSP,Shambhu Suskera,FALSE
+Koshi,1,Jhapa,8,Jhapa-4,NC,Deuman Thebe,FALSE
+Koshi,1,Jhapa,8,Jhapa-4,UML,L.P. Sawa Limbu,FALSE
+Koshi,1,Jhapa,8,Jhapa-4,NCP,Purushottam Chudel,FALSE
+Koshi,1,Jhapa,8,Jhapa-4,RPP,Bhakti Prasad Sitaula,FALSE
+Koshi,1,Jhapa,8,Jhapa-4,JP,Luthro Murmu,FALSE
+Koshi,1,Jhapa,9,Jhapa-5,RSP,Balendra Shah,FALSE
+Koshi,1,Jhapa,9,Jhapa-5,NC,Mandhara Chimariya,FALSE
+Koshi,1,Jhapa,9,Jhapa-5,UML,K.P. Sharma Oli,FALSE
+Koshi,1,Jhapa,9,Jhapa-5,NCP,Ranjit Tamang,FALSE
+Koshi,1,Jhapa,9,Jhapa-5,RPP,Laxmi Prasad Sangraula,FALSE
+Koshi,1,Jhapa,9,Jhapa-5,JP,Amrit Mahato,FALSE
+Koshi,1,Sankhuwasabha,10,Sankhuwasabha-1,RSP,Mingma Sherpa,FALSE
+Koshi,1,Sankhuwasabha,10,Sankhuwasabha-1,NC,Dipan Shrestha,FALSE
+Koshi,1,Sankhuwasabha,10,Sankhuwasabha-1,UML,Arjun Karki,FALSE
+Koshi,1,Sankhuwasabha,10,Sankhuwasabha-1,NCP,Sarita Khadka Thapa,FALSE
+Koshi,1,Sankhuwasabha,10,Sankhuwasabha-1,RPP,Haridev Shrestha,FALSE
+Koshi,1,Tehrathum,11,Tehrathum-1,RSP,Surendra Karki,FALSE
+Koshi,1,Tehrathum,11,Tehrathum-1,NC,Santosh Subba,FALSE
+Koshi,1,Tehrathum,11,Tehrathum-1,UML,Bhanubhakta Dhakal,FALSE
+Koshi,1,Tehrathum,11,Tehrathum-1,NCP,Ranadhoj Kandangwa,FALSE
+Koshi,1,Tehrathum,11,Tehrathum-1,RPP,Hom Bhakta Kerumbang,FALSE
+Koshi,1,Bhojpur,12,Bhojpur-1,RSP,Ramesh Prasad Ojha,FALSE
+Koshi,1,Bhojpur,12,Bhojpur-1,NC,Balkrishna Thapa,FALSE
+Koshi,1,Bhojpur,12,Bhojpur-1,UML,Sherdhan Rai,FALSE
+Koshi,1,Bhojpur,12,Bhojpur-1,NCP,Ajambar Kangmang Rai,FALSE
+Koshi,1,Bhojpur,12,Bhojpur-1,RPP,Janak Nepal,FALSE
+Koshi,1,Bhojpur,12,Bhojpur-1,SSP,Dhurba Rai,FALSE
+Koshi,1,Dhankuta,13,Dhankuta-1,RSP,Dinesh Bhandari,FALSE
+Koshi,1,Dhankuta,13,Dhankuta-1,NC,Dinesh Rai,FALSE
+Koshi,1,Dhankuta,13,Dhankuta-1,UML,Rajendra Kumar Rai,FALSE
+Koshi,1,Dhankuta,13,Dhankuta-1,NCP,Dharma Prasad Paudel,FALSE
+Koshi,1,Dhankuta,13,Dhankuta-1,RPP,Vibhatsu Thapa,FALSE
+Koshi,1,Morang,14,Morang-1,RSP,Yagyamani Neupane,FALSE
+Koshi,1,Morang,14,Morang-1,NC,Khadga Bahadur Phago,FALSE
+Koshi,1,Morang,14,Morang-1,UML,Ghanashyam Khatiwada,FALSE
+Koshi,1,Morang,14,Morang-1,NCP,Kulprasad Samba,FALSE
+Koshi,1,Morang,14,Morang-1,RPP,Purna Bahadur Waiba,FALSE
+Koshi,1,Morang,15,Morang-2,RSP,Krishna Kumar Karki,FALSE
+Koshi,1,Morang,15,Morang-2,NC,Minendra Rijal,FALSE
+Koshi,1,Morang,15,Morang-2,UML,Dilip Kumar Bagediya,FALSE
+Koshi,1,Morang,15,Morang-2,NCP,Chandrabir Rai,FALSE
+Koshi,1,Morang,15,Morang-2,RPP,Bansaraj Rajbanshi,FALSE
+Koshi,1,Morang,15,Morang-2,JP,Ghanashyam Chaudhary,FALSE
+Koshi,1,Morang,16,Morang-3,RSP,Ganesh Karki,FALSE
+Koshi,1,Morang,16,Morang-3,NC,Sunil Kumar Sharma,FALSE
+Koshi,1,Morang,16,Morang-3,UML,Iran Kumar Rai,FALSE
+Koshi,1,Morang,16,Morang-3,NCP,Devman Sambahamphe,FALSE
+Koshi,1,Morang,16,Morang-3,RPP,Prem Subedi,FALSE
+Koshi,1,Morang,17,Morang-4,RSP,Santosh Rajbanshi,FALSE
+Koshi,1,Morang,17,Morang-4,NC,Gururaj Ghimire,FALSE
+Koshi,1,Morang,17,Morang-4,UML,Jivan Ghimire,FALSE
+Koshi,1,Morang,17,Morang-4,NCP,Amanlal Modi,FALSE
+Koshi,1,Morang,17,Morang-4,RPP,Madhav Acharya,FALSE
+Koshi,1,Morang,18,Morang-5,RSP,Aasha Jha,FALSE
+Koshi,1,Morang,18,Morang-5,NC,Phool Kumar Lalbani,FALSE
+Koshi,1,Morang,18,Morang-5,UML,Manoj Agrawal,FALSE
+Koshi,1,Morang,18,Morang-5,NCP,Shiva Kumar Mandal,FALSE
+Koshi,1,Morang,18,Morang-5,RPP,Kumud Raya,FALSE
+Koshi,1,Morang,19,Morang-6,RSP,Rubina Acharya,FALSE
+Koshi,1,Morang,19,Morang-6,NC,Shekhar Koirala,FALSE
+Koshi,1,Morang,19,Morang-6,UML,Binod Dhakal,FALSE
+Koshi,1,Morang,19,Morang-6,NCP,Opendra Kumar Raya,FALSE
+Koshi,1,Morang,19,Morang-6,RPP,Sabin Niraula,FALSE
+Koshi,1,Sunsari,20,Sunsari-1,RSP,Sarin Tamang (Goma),FALSE
+Koshi,1,Sunsari,20,Sunsari-1,NC,Sujendra Tamang,FALSE
+Koshi,1,Sunsari,20,Sunsari-1,UML,Tikaram Limbu,FALSE
+Koshi,1,Sunsari,20,Sunsari-1,NCP,Surya Bahadur Bhattarai,FALSE
+Koshi,1,Sunsari,20,Sunsari-1,RPP,Uddhav Shrestha,FALSE
+Koshi,1,Sunsari,20,Sunsari-1,SSP,Harka Sampang,FALSE
+Koshi,1,Sunsari,21,Sunsari-2,NC,Rajiv Koirala,FALSE
+Koshi,1,Sunsari,21,Sunsari-2,UML,Rewati Raman Bhandari,FALSE
+Koshi,1,Sunsari,21,Sunsari-2,NCP,Ram Kumari Chaudhahry,FALSE
+Koshi,1,Sunsari,21,Sunsari-2,RPP,Dinesh Kumar Basnet,FALSE
+Koshi,1,Sunsari,21,Sunsari-2,JP,Mahabir Mahato,FALSE
+Koshi,1,Sunsari,22,Sunsari-3,RSP,Ashok Chaudhary,FALSE
+Koshi,1,Sunsari,22,Sunsari-3,NC,Bijay Kumar Gachhadar,FALSE
+Koshi,1,Sunsari,22,Sunsari-3,UML,Bhagwati Chaudhary,FALSE
+Koshi,1,Sunsari,22,Sunsari-3,NCP,Durgesh Chaudhary,FALSE
+Koshi,1,Sunsari,22,Sunsari-3,RPP,Ghanashyam Gurung,FALSE
+Koshi,1,Sunsari,22,Sunsari-3,JP,Ram Narayam Tharu,FALSE
+Koshi,1,Sunsari,23,Sunsari-4,RSP,Dipak Kumar Sah,FALSE
+Koshi,1,Sunsari,23,Sunsari-4,NC,Gyanendra Bahadur Karki,FALSE
+Koshi,1,Sunsari,23,Sunsari-4,UML,Jagadish Kushiyat,FALSE
+Koshi,1,Sunsari,23,Sunsari-4,NCP,Mohammad Mehfooz Ansari,FALSE
+Koshi,1,Sunsari,23,Sunsari-4,RPP,Prem Prasad Bhattarai,FALSE
+Koshi,1,Solukhumbu,24,Solukhumbu-1,RSP,Rishidhan Rai,FALSE
+Koshi,1,Solukhumbu,24,Solukhumbu-1,NC,Prakash Singh Karki,FALSE
+Koshi,1,Solukhumbu,24,Solukhumbu-1,UML,Kalpana Rai,FALSE
+Koshi,1,Solukhumbu,24,Solukhumbu-1,NCP,Asim Rai,FALSE
+Koshi,1,Solukhumbu,24,Solukhumbu-1,RPP,Rajendra Basnet,FALSE
+Koshi,1,Khotang,25,Khotang-1,RSP,Rudhra Giri,FALSE
+Koshi,1,Khotang,25,Khotang-1,NC,Birbal Kaji Rai,FALSE
+Koshi,1,Khotang,25,Khotang-1,UML,Devbikram Rai,FALSE
+Koshi,1,Khotang,25,Khotang-1,NCP,Hari Roka,FALSE
+Koshi,1,Khotang,25,Khotang-1,RPP,Dipak Tamang,FALSE
+Koshi,1,Okhaldhunga,26,Okhaldhunga-1,RSP,Bisworaj Pokharel,FALSE
+Koshi,1,Okhaldhunga,26,Okhaldhunga-1,NC,Kumar Luitel,FALSE
+Koshi,1,Okhaldhunga,26,Okhaldhunga-1,UML,Asmita Thapa,FALSE
+Koshi,1,Okhaldhunga,26,Okhaldhunga-1,NCP,Ambir Babu Gurung,FALSE
+Koshi,1,Okhaldhunga,26,Okhaldhunga-1,RPP,Dik Prasad Bastola,FALSE
+Koshi,1,Udayapur,27,Udayapur-1,RSP,Parash Gelal,FALSE
+Koshi,1,Udayapur,27,Udayapur-1,NC,Bidur Basnet,FALSE
+Koshi,1,Udayapur,27,Udayapur-1,UML,Durga Kumar Thapa,FALSE
+Koshi,1,Udayapur,27,Udayapur-1,NCP,Baldev Chaudhary,FALSE
+Koshi,1,Udayapur,27,Udayapur-1,RPP,Subhas Chandra Khadka,FALSE
+Koshi,1,Udayapur,27,Udayapur-1,IND,Devraj Roka,TRUE
+Koshi,1,Udayapur,28,Udayapur-2,RSP,Surya Bahadur Tamang,FALSE
+Koshi,1,Udayapur,28,Udayapur-2,NC,Ram Kumar Rai,FALSE
+Koshi,1,Udayapur,28,Udayapur-2,UML,Ambar Rayamajhi,FALSE
+Koshi,1,Udayapur,28,Udayapur-2,NCP,Suresh Kumar Rai,FALSE
+Koshi,1,Udayapur,28,Udayapur-2,RPP,Bishnu Bahadur Khadka,FALSE
+Koshi,1,Udayapur,28,Udayapur-2,IND,Major Rai,TRUE
+Madhesh,2,Saptari,29,Saptari-1,RSP,Pushpa Chaudhary,FALSE
+Madhesh,2,Saptari,29,Saptari-1,NC,Ramdev Sah,FALSE
+Madhesh,2,Saptari,29,Saptari-1,UML,Suman Pyakurel,FALSE
+Madhesh,2,Saptari,29,Saptari-1,NCP,Rabindra Chaudhary,FALSE
+Madhesh,2,Saptari,29,Saptari-1,RPP,Sanyajit Kumar Jha,FALSE
+Madhesh,2,Saptari,29,Saptari-1,PSP-N,Shyam Sardar,FALSE
+Madhesh,2,Saptari,29,Saptari-1,Janamat,Jay Kant Ruat,FALSE
+Madhesh,2,Saptari,30,Saptari-2,RSP,Ramji Yadav,FALSE
+Madhesh,2,Saptari,30,Saptari-2,NC,Ram Kumar Yadav,FALSE
+Madhesh,2,Saptari,30,Saptari-2,UML,Ziya Ulhaq Ansari,FALSE
+Madhesh,2,Saptari,30,Saptari-2,NCP,Suryanath Prasad Yadav,FALSE
+Madhesh,2,Saptari,30,Saptari-2,RPP,Ajay Kumar Das,FALSE
+Madhesh,2,Saptari,30,Saptari-2,PSP-N,Umesh Kumar Yadav,FALSE
+Madhesh,2,Saptari,30,Saptari-2,Janamat,C.K. Raut,FALSE
+Madhesh,2,Saptari,31,Saptari-3,RSP,Umakanta Chaudhary,FALSE
+Madhesh,2,Saptari,31,Saptari-3,NC,Dinesh Kumar Yadav,FALSE
+Madhesh,2,Saptari,31,Saptari-3,UML,Tarakanta Chaudhary,FALSE
+Madhesh,2,Saptari,31,Saptari-3,NCP,Arun Kumar Sah,FALSE
+Madhesh,2,Saptari,31,Saptari-3,RPP,Umdeshwar Sah,FALSE
+Madhesh,2,Saptari,31,Saptari-3,PSP-N,Upendra Yadav,FALSE
+Madhesh,2,Saptari,31,Saptari-3,Janamat,Surendra Sharma,FALSE
+Madhesh,2,Saptari,32,Saptari-4,RSP,Sitaram Shah,FALSE
+Madhesh,2,Saptari,32,Saptari-4,NC,Tejulal Chaudhary,FALSE
+Madhesh,2,Saptari,32,Saptari-4,UML,Ganga Prasad Chaudhari,FALSE
+Madhesh,2,Saptari,32,Saptari-4,NCP,Rubi Kumari Karna,FALSE
+Madhesh,2,Saptari,32,Saptari-4,RPP,Rup Kumar Neupane,FALSE
+Madhesh,2,Saptari,32,Saptari-4,PSP-N,Bobby Singh,FALSE
+Madhesh,2,Saptari,32,Saptari-4,Janamat,Jitendra Kumar Sah,FALSE
+Madhesh,2,Siraha,33,Siraha-1,RSP,Bablu Gupta,FALSE
+Madhesh,2,Siraha,33,Siraha-1,NC,Ramsundar Chaudhary,FALSE
+Madhesh,2,Siraha,33,Siraha-1,UML,Kedarnath Yadav,FALSE
+Madhesh,2,Siraha,33,Siraha-1,NCP,Ramchandra Yadav,FALSE
+Madhesh,2,Siraha,33,Siraha-1,RPP,Basudev Sah,FALSE
+Madhesh,2,Siraha,33,Siraha-1,PSP-N,Satyanarayan Yadav,FALSE
+Madhesh,2,Siraha,33,Siraha-1,Janamat,Ramswaroop Chaudhary,FALSE
+Madhesh,2,Siraha,34,Siraha-2,RSP,Shivasankar Yadav,FALSE
+Madhesh,2,Siraha,34,Siraha-2,NC,Ram Chandra Yadav,FALSE
+Madhesh,2,Siraha,34,Siraha-2,UML,Nabin Kumar Yadav,FALSE
+Madhesh,2,Siraha,34,Siraha-2,NCP,Mukti Singh,FALSE
+Madhesh,2,Siraha,34,Siraha-2,RPP,Shyamkishor Sah Haluwai,FALSE
+Madhesh,2,Siraha,34,Siraha-2,PSP-N,Sanjiv Yadav,FALSE
+Madhesh,2,Siraha,34,Siraha-2,Janamat,Binod Kumar Yadav,FALSE
+Madhesh,2,Siraha,35,Siraha-3,RSP,Dr Sambhu Yadav,FALSE
+Madhesh,2,Siraha,35,Siraha-3,NC,Subhash Chandra Yadav,FALSE
+Madhesh,2,Siraha,35,Siraha-3,UML,Lilanath Shrestha,FALSE
+Madhesh,2,Siraha,35,Siraha-3,NCP,Bishwonath Sah,FALSE
+Madhesh,2,Siraha,35,Siraha-3,RPP,Devdayal Singh,FALSE
+Madhesh,2,Siraha,35,Siraha-3,PSP-N,Asheshwar Yadav,FALSE
+Madhesh,2,Siraha,35,Siraha-3,Janamat,Rohit Mahato,FALSE
+Madhesh,2,Siraha,36,Siraha-4,RSP,Tapeshwor Yadav,FALSE
+Madhesh,2,Siraha,36,Siraha-4,NC,Chandrakala Kumari Yadav,FALSE
+Madhesh,2,Siraha,36,Siraha-4,UML,Biltu Sah,FALSE
+Madhesh,2,Siraha,36,Siraha-4,NCP,Ajay Shankar Nayak,FALSE
+Madhesh,2,Siraha,36,Siraha-4,RPP,Shubendra Kumar Sah,FALSE
+Madhesh,2,Siraha,36,Siraha-4,PSP-N,Rajkishor Yadav,FALSE
+Madhesh,2,Siraha,36,Siraha-4,Janamat,Birendra Prasad Mahato,FALSE
+Madhesh,2,Dhanusha,37,Dhanusha-1,RSP,Kishori Shah,FALSE
+Madhesh,2,Dhanusha,37,Dhanusha-1,NC,Ram Paltan Sah,FALSE
+Madhesh,2,Dhanusha,37,Dhanusha-1,UML,Ramchandra Mandal,FALSE
+Madhesh,2,Dhanusha,37,Dhanusha-1,NCP,Matrika Prasad Yadav,FALSE
+Madhesh,2,Dhanusha,37,Dhanusha-1,RPP,Manoj Malla Thakuri,FALSE
+Madhesh,2,Dhanusha,37,Dhanusha-1,PSP-N,Deepak Karki,FALSE
+Madhesh,2,Dhanusha,37,Dhanusha-1,Janamat,Brahmadev Mahato,FALSE
+Madhesh,2,Dhanusha,38,Dhanusha-2,RSP,Rambinod Shah,FALSE
+Madhesh,2,Dhanusha,38,Dhanusha-2,NC,Dinesh Parshaila,FALSE
+Madhesh,2,Dhanusha,38,Dhanusha-2,UML,Umashankar Argariya,FALSE
+Madhesh,2,Dhanusha,38,Dhanusha-2,NCP,Ram Chandra Jha,FALSE
+Madhesh,2,Dhanusha,38,Dhanusha-2,RPP,Viheshwar Mandal,FALSE
+Madhesh,2,Dhanusha,38,Dhanusha-2,PSP-N,Pashupati Yadav,FALSE
+Madhesh,2,Dhanusha,38,Dhanusha-2,Janamat,Surendra Prasad Yadav,FALSE
+Madhesh,2,Dhanusha,39,Dhanusha-3,RSP,Manish Jha,FALSE
+Madhesh,2,Dhanusha,39,Dhanusha-3,NC,Bimalendra Nidhi,FALSE
+Madhesh,2,Dhanusha,39,Dhanusha-3,UML,Julie Kumari Mahato,FALSE
+Madhesh,2,Dhanusha,39,Dhanusha-3,NCP,Ram Lalit Mandal,FALSE
+Madhesh,2,Dhanusha,39,Dhanusha-3,RPP,Huseni Kabadi,FALSE
+Madhesh,2,Dhanusha,39,Dhanusha-3,PSP-N,Parmeshwar Sah Sudi,FALSE
+Madhesh,2,Dhanusha,39,Dhanusha-3,Janamat,Gopal Sah,FALSE
+Madhesh,2,Dhanusha,39,Dhanusha-3,IND,Diwakar Sah,TRUE
+Madhesh,2,Dhanusha,40,Dhanusha-4,RSP,Raj Kishor Mahato,FALSE
+Madhesh,2,Dhanusha,40,Dhanusha-4,NC,Mahendra Yadav,FALSE
+Madhesh,2,Dhanusha,40,Dhanusha-4,UML,Raghubir Mahaseth,FALSE
+Madhesh,2,Dhanusha,40,Dhanusha-4,NCP,Sanjay Kumar Mahato,FALSE
+Madhesh,2,Dhanusha,40,Dhanusha-4,RPP,Rambabu Sah,FALSE
+Madhesh,2,Dhanusha,40,Dhanusha-4,PSP-N,Krishna Chandra Sah,FALSE
+Madhesh,2,Dhanusha,40,Dhanusha-4,Janamat,Indrajit Kumar Yadav,FALSE
+Madhesh,2,Mahottari,41,Mahottari-1,RSP,Pramod Mahato,FALSE
+Madhesh,2,Mahottari,41,Mahottari-1,NC,Mukesh Raj Kafle,FALSE
+Madhesh,2,Mahottari,41,Mahottari-1,UML,Laxmi Mahato Koiri,FALSE
+Madhesh,2,Mahottari,41,Mahottari-1,NCP,Girirajmani Pokharel,FALSE
+Madhesh,2,Mahottari,41,Mahottari-1,RPP,Yanikhar Gautam,FALSE
+Madhesh,2,Mahottari,41,Mahottari-1,PSP-N,Yognarayan Mahato,FALSE
+Madhesh,2,Mahottari,41,Mahottari-1,Janamat,Birendra Mahato,FALSE
+Madhesh,2,Mahottari,42,Mahottari-2,RSP,Dipak Shah,FALSE
+Madhesh,2,Mahottari,42,Mahottari-2,NC,Kiran Yadav,FALSE
+Madhesh,2,Mahottari,42,Mahottari-2,UML,Ram Parikshyan Yadav,FALSE
+Madhesh,2,Mahottari,42,Mahottari-2,NCP,Laxman Yadav,FALSE
+Madhesh,2,Mahottari,42,Mahottari-2,RPP,Ramlakhan Sah,FALSE
+Madhesh,2,Mahottari,42,Mahottari-2,PSP-N,Sharat Singh Bhandari,FALSE
+Madhesh,2,Mahottari,42,Mahottari-2,Janamat,Jiya Kumar Pandey,FALSE
+Madhesh,2,Mahottari,43,Mahottari-3,RSP,Ujjwal Jha,FALSE
+Madhesh,2,Mahottari,43,Mahottari-3,NC,Bajarang Nepali,FALSE
+Madhesh,2,Mahottari,43,Mahottari-3,UML,Manoj Kumar Singh,FALSE
+Madhesh,2,Mahottari,43,Mahottari-3,NCP,Rajkishor Sah Sudi,FALSE
+Madhesh,2,Mahottari,43,Mahottari-3,RPP,Rajeshwar Ray Yadav,FALSE
+Madhesh,2,Mahottari,43,Mahottari-3,PSP-N,Minakshi Jha,FALSE
+Madhesh,2,Mahottari,43,Mahottari-3,Janamat,Arbin Thakur,FALSE
+Madhesh,2,Mahottari,44,Mahottari-4,RSP,Gauri Kumari Yadav,FALSE
+Madhesh,2,Mahottari,44,Mahottari-4,NC,Mahendra Kumar Raya,FALSE
+Madhesh,2,Mahottari,44,Mahottari-4,UML,Nilam Adhikari,FALSE
+Madhesh,2,Mahottari,44,Mahottari-4,NCP,Bharat Prasad Sah,FALSE
+Madhesh,2,Mahottari,44,Mahottari-4,RPP,Sunil Kumar Singh,FALSE
+Madhesh,2,Mahottari,44,Mahottari-4,PSP-N,Surendra Yadav,FALSE
+Madhesh,2,Mahottari,44,Mahottari-4,Janamat,Manoj Kumar Sah,FALSE
+Madhesh,2,Sarlahi,45,Sarlahi-1,RSP,Nimita Karki,FALSE
+Madhesh,2,Sarlahi,45,Sarlahi-1,NC,Sambhulal Shrestha,FALSE
+Madhesh,2,Sarlahi,45,Sarlahi-1,UML,Manoj Devkota,FALSE
+Madhesh,2,Sarlahi,45,Sarlahi-1,NCP,Pramod Sah,FALSE
+Madhesh,2,Sarlahi,45,Sarlahi-1,RPP,Suryanarayan Yadav,FALSE
+Madhesh,2,Sarlahi,45,Sarlahi-1,PSP-N,Ram Prakash Chaudhary,FALSE
+Madhesh,2,Sarlahi,45,Sarlahi-1,Janamat,Shreejanya Mahato,FALSE
+Madhesh,2,Sarlahi,46,Sarlahi-2,RSP,Rabin Mahato,FALSE
+Madhesh,2,Sarlahi,46,Sarlahi-2,NC,Saroj Kumar Yadav,FALSE
+Madhesh,2,Sarlahi,46,Sarlahi-2,UML,Dharmendra Ray,FALSE
+Madhesh,2,Sarlahi,46,Sarlahi-2,NCP,Mahindra Ray Yadav,FALSE
+Madhesh,2,Sarlahi,46,Sarlahi-2,RPP,Rajkishor Ray Yadav,FALSE
+Madhesh,2,Sarlahi,46,Sarlahi-2,PSP-N,Bharat Chaudhary,FALSE
+Madhesh,2,Sarlahi,46,Sarlahi-2,Janamat,Bipin Kapad,FALSE
+Madhesh,2,Sarlahi,47,Sarlahi-3,RSP,Narendra Shah Kalwar,FALSE
+Madhesh,2,Sarlahi,47,Sarlahi-3,NC,Binod Khanal,FALSE
+Madhesh,2,Sarlahi,47,Sarlahi-3,UML,Hari Prasad Upreti,FALSE
+Madhesh,2,Sarlahi,47,Sarlahi-3,NCP,Narayan Kaji Shrestha,FALSE
+Madhesh,2,Sarlahi,47,Sarlahi-3,RPP,Dholaram Barakoti,FALSE
+Madhesh,2,Sarlahi,47,Sarlahi-3,PSP-N,J.P. Yadav,FALSE
+Madhesh,2,Sarlahi,47,Sarlahi-3,Janamat,Sunil Prasad Gupta,FALSE
+Madhesh,2,Sarlahi,48,Sarlahi-4,RSP,Amresh Kumar Singh,FALSE
+Madhesh,2,Sarlahi,48,Sarlahi-4,NC,Gagan Thapa,FALSE
+Madhesh,2,Sarlahi,48,Sarlahi-4,UML,Rabi Singh Kushwaha,FALSE
+Madhesh,2,Sarlahi,48,Sarlahi-4,NCP,Ragnish Raya Yadav,FALSE
+Madhesh,2,Sarlahi,48,Sarlahi-4,RPP,Pradeep Jha,FALSE
+Madhesh,2,Sarlahi,48,Sarlahi-4,PSP-N,Rameshwar Ray Yadav,FALSE
+Madhesh,2,Sarlahi,48,Sarlahi-4,Janamat,Rakesh Kumar Mishra,FALSE
+Madhesh,2,Rautahat,49,Rautahat-1,RSP,Rajesh Chaudhary,FALSE
+Madhesh,2,Rautahat,49,Rautahat-1,NC,Anil Kumar Jha,FALSE
+Madhesh,2,Rautahat,49,Rautahat-1,UML,Ajay Kumar Gupta,FALSE
+Madhesh,2,Rautahat,49,Rautahat-1,NCP,Madhav Kumar Nepal,FALSE
+Madhesh,2,Rautahat,49,Rautahat-1,RPP,Shreeram Sah,FALSE
+Madhesh,2,Rautahat,49,Rautahat-1,PSP-N,Yogendra Rae Yadav,FALSE
+Madhesh,2,Rautahat,49,Rautahat-1,Janamat,Devendra Mishra,FALSE
+Madhesh,2,Rautahat,50,Rautahat-2,RSP,Sheikh Sagir,FALSE
+Madhesh,2,Rautahat,50,Rautahat-2,NC,Firdosh Alam,FALSE
+Madhesh,2,Rautahat,50,Rautahat-2,UML,Shailendra Sah,FALSE
+Madhesh,2,Rautahat,50,Rautahat-2,NCP,Kiran Kumar Sah,FALSE
+Madhesh,2,Rautahat,50,Rautahat-2,RPP,Ravindra Prasad Sah,FALSE
+Madhesh,2,Rautahat,50,Rautahat-2,PSP-N,Ram Aashish Ray Yadav,FALSE
+Madhesh,2,Rautahat,50,Rautahat-2,Janamat,Sonu Kushwaha,FALSE
+Madhesh,2,Rautahat,51,Rautahat-3,RSP,Dhiraj Patel,FALSE
+Madhesh,2,Rautahat,51,Rautahat-3,NC,Ram Kripal Yadav,FALSE
+Madhesh,2,Rautahat,51,Rautahat-3,UML,Kundan Prasad Kushwaha,FALSE
+Madhesh,2,Rautahat,51,Rautahat-3,NCP,Punam Devi,FALSE
+Madhesh,2,Rautahat,51,Rautahat-3,RPP,Sikindra Prasad Sah,FALSE
+Madhesh,2,Rautahat,51,Rautahat-3,Janamat,Mohammad Praved Alam,FALSE
+Madhesh,2,Rautahat,52,Rautahat-4,RSP,Ganesh Paudel,FALSE
+Madhesh,2,Rautahat,52,Rautahat-4,NC,Dev Prasad Timilsena,FALSE
+Madhesh,2,Rautahat,52,Rautahat-4,UML,Ramji Sah,FALSE
+Madhesh,2,Rautahat,52,Rautahat-4,NCP,Ram Kumar Bhattarai,FALSE
+Madhesh,2,Rautahat,52,Rautahat-4,RPP,Bahadur Yadav,FALSE
+Madhesh,2,Rautahat,52,Rautahat-4,Janamat,Ram Kalyan Raut,FALSE
+Madhesh,2,Rautahat,52,Rautahat-4,AJP,Rishi Dhamala,FALSE
+Madhesh,2,Bara,53,Bara-1,RSP,Ganesh Dhimal,FALSE
+Madhesh,2,Bara,53,Bara-1,NC,Shambhu Budhathoki,FALSE
+Madhesh,2,Bara,53,Bara-1,UML,Achyut Prasad Mainali,FALSE
+Madhesh,2,Bara,53,Bara-1,NCP,Santosh Dhungel,FALSE
+Madhesh,2,Bara,53,Bara-1,RPP,Laxmi Sah Kalwar,FALSE
+Madhesh,2,Bara,53,Bara-1,Janamat,Kamullah Ansari,FALSE
+Madhesh,2,Bara,54,Bara-2,RSP,Chandan Singh,FALSE
+Madhesh,2,Bara,54,Bara-2,NC,Bhaiyaram Yadav,FALSE
+Madhesh,2,Bara,54,Bara-2,UML,Balbir Prasad Chaudhary,FALSE
+Madhesh,2,Bara,54,Bara-2,NCP,Ramesh Prasad Yadav,FALSE
+Madhesh,2,Bara,54,Bara-2,RPP,Lal Bahadur Prasad Teli,FALSE
+Madhesh,2,Bara,54,Bara-2,Janamat,Rajesh Sah,FALSE
+Madhesh,2,Bara,55,Bara-3,RSP,Arbinda Shah,FALSE
+Madhesh,2,Bara,55,Bara-3,NC,Farmullah Mansoor,FALSE
+Madhesh,2,Bara,55,Bara-3,UML,Jwala Kumari Sah,FALSE
+Madhesh,2,Bara,55,Bara-3,NCP,Bharat Prasad Sah,FALSE
+Madhesh,2,Bara,55,Bara-3,RPP,Rajendra Prasad Jaiswal,FALSE
+Madhesh,2,Bara,55,Bara-3,PSP-N,Rambabu Kumar Yadav,FALSE
+Madhesh,2,Bara,55,Bara-3,Janamat,Pramod Gupta,FALSE
+Madhesh,2,Bara,56,Bara-4,RSP,Rahabar Ansari,FALSE
+Madhesh,2,Bara,56,Bara-4,NC,Shyambabu Gupta,FALSE
+Madhesh,2,Bara,56,Bara-4,UML,Krishna Kumar Shrestha,FALSE
+Madhesh,2,Bara,56,Bara-4,NCP,Ajay Kushwaha,FALSE
+Madhesh,2,Bara,56,Bara-4,RPP,Dileep Kumar Sharma Nepal,FALSE
+Madhesh,2,Bara,56,Bara-4,Janamat,Hasanjaan Miya,FALSE
+Madhesh,2,Parsa,57,Parsa-1,RSP,Hari Panta,FALSE
+Madhesh,2,Parsa,57,Parsa-1,NC,Anil Kumar Rungata,FALSE
+Madhesh,2,Parsa,57,Parsa-1,UML,Pradeep Yadav,FALSE
+Madhesh,2,Parsa,57,Parsa-1,NCP,Ajay Chaurasiya,FALSE
+Madhesh,2,Parsa,57,Parsa-1,RPP,Nandakishor Prasad Shreewastav,FALSE
+Madhesh,2,Parsa,57,Parsa-1,PSP-N,Ramnaresh Yadav,FALSE
+Madhesh,2,Parsa,57,Parsa-1,Janamat,Omprakash Sarraf,FALSE
+Madhesh,2,Parsa,58,Parsa-2,RSP,Sushil Patel,FALSE
+Madhesh,2,Parsa,58,Parsa-2,NC,Ajay Chaurasiya,FALSE
+Madhesh,2,Parsa,58,Parsa-2,UML,Rima Kumari Yadav,FALSE
+Madhesh,2,Parsa,58,Parsa-2,NCP,Manoj Chaudhary,FALSE
+Madhesh,2,Parsa,58,Parsa-2,RPP,Bina Jaiswal,FALSE
+Madhesh,2,Parsa,58,Parsa-2,PSP-N,Ashok Temani,FALSE
+Madhesh,2,Parsa,58,Parsa-2,Janamat,Shyam Kumar Gupta,FALSE
+Madhesh,2,Parsa,59,Parsa-3,RSP,Ramakanta Chaurasiya,FALSE
+Madhesh,2,Parsa,59,Parsa-3,NC,Surendra Prasad Chaudhary,FALSE
+Madhesh,2,Parsa,59,Parsa-3,UML,Rupesh Pandey,FALSE
+Madhesh,2,Parsa,59,Parsa-3,NCP,Chhotelal Yadav,FALSE
+Madhesh,2,Parsa,59,Parsa-3,RPP,Nabin Kumar Singh,FALSE
+Madhesh,2,Parsa,59,Parsa-3,Janamat,Malti Kumari Kushwaha,FALSE
+Madhesh,2,Parsa,60,Parsa-4,RSP,Tek Bahadur Shakya,FALSE
+Madhesh,2,Parsa,60,Parsa-4,NC,Ramesh Rijal,FALSE
+Madhesh,2,Parsa,60,Parsa-4,UML,Zalim Miya Ansari,FALSE
+Madhesh,2,Parsa,60,Parsa-4,NCP,Jay Prakash Tharu,FALSE
+Madhesh,2,Parsa,60,Parsa-4,RPP,Shanta Kumar Joshi,FALSE
+Madhesh,2,Parsa,60,Parsa-4,PSP-N,Kripa Sindhu Chaudhary,FALSE
+Madhesh,2,Parsa,60,Parsa-4,Janamat,Sima Gupta,FALSE
+Bagmati,3,Dolakha,61,Dolakha-1,RSP,Jagdish Kharel,FALSE
+Bagmati,3,Dolakha,61,Dolakha-1,NC,Ajaya Babu Shiwakoti,FALSE
+Bagmati,3,Dolakha,61,Dolakha-1,UML,Parbat Gurung,FALSE
+Bagmati,3,Dolakha,61,Dolakha-1,NCP,Bishal Khadka,FALSE
+Bagmati,3,Dolakha,61,Dolakha-1,RPP,Prabin Kumar Thokar Tamang,FALSE
+Bagmati,3,Ramechhap,62,Ramechhap-1,RSP,Krishnahari Budhathoki,FALSE
+Bagmati,3,Ramechhap,62,Ramechhap-1,NC,Ramchandra Khadka,FALSE
+Bagmati,3,Ramechhap,62,Ramechhap-1,UML,Madhav Prasad Dhungel,FALSE
+Bagmati,3,Ramechhap,62,Ramechhap-1,NCP,Shyam Kumar Shrestha,FALSE
+Bagmati,3,Ramechhap,62,Ramechhap-1,RPP,Gore Bahadur Tamang,FALSE
+Bagmati,3,Ramechhap,62,Ramechhap-1,UNP,Deep Bahadur Yonjan,FALSE
+Bagmati,3,Sindhuli,63,Sindhuli-1,RSP,Dhanendra Karki,FALSE
+Bagmati,3,Sindhuli,63,Sindhuli-1,NC,Ujjwal Baral,FALSE
+Bagmati,3,Sindhuli,63,Sindhuli-1,UML,Pradeep K.C.,FALSE
+Bagmati,3,Sindhuli,63,Sindhuli-1,NCP,Dekendra Subedi,FALSE
+Bagmati,3,Sindhuli,63,Sindhuli-1,RPP,Ramnarayan Adhikari Danuwar,FALSE
+Bagmati,3,Sindhuli,63,Sindhuli-1,UNP,Motilal Tamang,FALSE
+Bagmati,3,Sindhuli,64,Sindhuli-2,RSP,Asish Gajurel,FALSE
+Bagmati,3,Sindhuli,64,Sindhuli-2,NC,Sushila Thing,FALSE
+Bagmati,3,Sindhuli,64,Sindhuli-2,UML,Manoj Jung Thapa,FALSE
+Bagmati,3,Sindhuli,64,Sindhuli-2,NCP,Lekhnath Dahal,FALSE
+Bagmati,3,Sindhuli,64,Sindhuli-2,RPP,Mukunda Prasad Gajurel,FALSE
+Bagmati,3,Sindhuli,64,Sindhuli-2,IND,Maheshwar Dahal,TRUE
+Bagmati,3,Rasuwa,65,Rasuwa-1,RSP,Basanta Bhatta,FALSE
+Bagmati,3,Rasuwa,65,Rasuwa-1,NC,Mohan Acharya,FALSE
+Bagmati,3,Rasuwa,65,Rasuwa-1,UML,Prem Bahadur Tamang,FALSE
+Bagmati,3,Rasuwa,65,Rasuwa-1,NCP,Madhav Lamichhane,FALSE
+Bagmati,3,Rasuwa,65,Rasuwa-1,RPP,Hariprasad Ghimire,FALSE
+Bagmati,3,Rasuwa,65,Rasuwa-1,UNP,Man Bahadur Tamang,FALSE
+Bagmati,3,Dhading,66,Dhading-1,RSP,Ashika Tamang,FALSE
+Bagmati,3,Dhading,66,Dhading-1,NC,Krishna Rijal,FALSE
+Bagmati,3,Dhading,66,Dhading-1,UML,Bhumi Tripathi,FALSE
+Bagmati,3,Dhading,66,Dhading-1,NCP,Rajendra Prasad Pandey,FALSE
+Bagmati,3,Dhading,66,Dhading-1,RPP,Geeta Prasad Acharya,FALSE
+Bagmati,3,Dhading,66,Dhading-1,UNP,Shyamraja Pandey,FALSE
+Bagmati,3,Dhading,67,Dhading-2,RSP,Bodh Narayan Shrestha,FALSE
+Bagmati,3,Dhading,67,Dhading-2,NC,Ramesh Prasad Dhamala,FALSE
+Bagmati,3,Dhading,67,Dhading-2,UML,Dhan Bahadur Ghale,FALSE
+Bagmati,3,Dhading,67,Dhading-2,NCP,Ram Bahadur Bhandari,FALSE
+Bagmati,3,Dhading,67,Dhading-2,RPP,Suresh Rijal,FALSE
+Bagmati,3,Dhading,67,Dhading-2,UNP,Amir Tamang,FALSE
+Bagmati,3,Nuwakot,68,Nuwakot-1,RSP,Bikram Timilsina,FALSE
+Bagmati,3,Nuwakot,68,Nuwakot-1,NC,Prakash Sharan Mahat,FALSE
+Bagmati,3,Nuwakot,68,Nuwakot-1,UML,Badri Mainali,FALSE
+Bagmati,3,Nuwakot,68,Nuwakot-1,NCP,Hit Bahadur Tamang,FALSE
+Bagmati,3,Nuwakot,68,Nuwakot-1,RPP,Bima Thapa,FALSE
+Bagmati,3,Nuwakot,68,Nuwakot-1,UNP,Amit Tamang,FALSE
+Bagmati,3,Nuwakot,69,Nuwakot-2,RSP,Achyutam Lamichhane,FALSE
+Bagmati,3,Nuwakot,69,Nuwakot-2,NC,Jagdishwor Narsingh K.C.,FALSE
+Bagmati,3,Nuwakot,69,Nuwakot-2,UML,Keshavraj Pandey,FALSE
+Bagmati,3,Nuwakot,69,Nuwakot-2,NCP,Harinath Khatiwada,FALSE
+Bagmati,3,Nuwakot,69,Nuwakot-2,RPP,Jhanak Pyakurel,FALSE
+Bagmati,3,Nuwakot,69,Nuwakot-2,UNP,Gyandendra Prakash Ghale,FALSE
+Bagmati,3,Kathmandu,70,Kathmandu-1,RSP,Ranju Darshana,FALSE
+Bagmati,3,Kathmandu,70,Kathmandu-1,NC,Prawal Thapa,FALSE
+Bagmati,3,Kathmandu,70,Kathmandu-1,UML,Mohan Regmi,FALSE
+Bagmati,3,Kathmandu,70,Kathmandu-1,NCP,Menaka Bhandari,FALSE
+Bagmati,3,Kathmandu,70,Kathmandu-1,RPP,Rabindra Mishra,FALSE
+Bagmati,3,Kathmandu,70,Kathmandu-1,UNP,Mangal Lal Shrestha,FALSE
+Bagmati,3,Kathmandu,71,Kathmandu-2,RSP,Sunil K.C.,FALSE
+Bagmati,3,Kathmandu,71,Kathmandu-2,NC,Kabir Sharma,FALSE
+Bagmati,3,Kathmandu,71,Kathmandu-2,UML,Maniram Phuyal,FALSE
+Bagmati,3,Kathmandu,71,Kathmandu-2,NCP,Nitesh Paudel,FALSE
+Bagmati,3,Kathmandu,71,Kathmandu-2,RPP,Kuntidevi Pokharel,FALSE
+Bagmati,3,Kathmandu,71,Kathmandu-2,UNP,Pawan Pokhrel,FALSE
+Bagmati,3,Kathmandu,72,Kathmandu-3,RSP,Raju Pandey,FALSE
+Bagmati,3,Kathmandu,72,Kathmandu-3,NC,Ramesh Aryal,FALSE
+Bagmati,3,Kathmandu,72,Kathmandu-3,UML,Rameshwor Phuyal,FALSE
+Bagmati,3,Kathmandu,72,Kathmandu-3,NCP,Niraj Lama,FALSE
+Bagmati,3,Kathmandu,72,Kathmandu-3,RPP,Surendra Singh Bohara,FALSE
+Bagmati,3,Kathmandu,72,Kathmandu-3,UNP,Kulman Ghising,FALSE
+Bagmati,3,Kathmandu,73,Kathmandu-4,RSP,Pukar Bam,FALSE
+Bagmati,3,Kathmandu,73,Kathmandu-4,NC,Sachin Timalsina,FALSE
+Bagmati,3,Kathmandu,73,Kathmandu-4,UML,Rajan Bhattarai,FALSE
+Bagmati,3,Kathmandu,73,Kathmandu-4,NCP,Indra Bhusal,FALSE
+Bagmati,3,Kathmandu,73,Kathmandu-4,RPP,Surendra Bhandari,FALSE
+Bagmati,3,Kathmandu,73,Kathmandu-4,UNP,Jhanak Bahadur Adhikari,FALSE
+Bagmati,3,Kathmandu,74,Kathmandu-5,RSP,Sasmit Pokhrel,FALSE
+Bagmati,3,Kathmandu,74,Kathmandu-5,NC,Pradip Paudel,FALSE
+Bagmati,3,Kathmandu,74,Kathmandu-5,UML,Ishwar Pokhrel,FALSE
+Bagmati,3,Kathmandu,74,Kathmandu-5,NCP,Kalpana Sharma,FALSE
+Bagmati,3,Kathmandu,74,Kathmandu-5,RPP,Kamal Thapa,FALSE
+Bagmati,3,Kathmandu,74,Kathmandu-5,UNP,Shree Ram Gurung,FALSE
+Bagmati,3,Kathmandu,75,Kathmandu-6,RSP,Shishir Khanal,FALSE
+Bagmati,3,Kathmandu,75,Kathmandu-6,NC,Krishna Baniya,FALSE
+Bagmati,3,Kathmandu,75,Kathmandu-6,UML,Aman Kumar Maskey,FALSE
+Bagmati,3,Kathmandu,75,Kathmandu-6,NCP,Hemlal Sharma,FALSE
+Bagmati,3,Kathmandu,75,Kathmandu-6,RPP,Uddhavraj Bhetwal,FALSE
+Bagmati,3,Kathmandu,75,Kathmandu-6,UNP,Warish Dharel,FALSE
+Bagmati,3,Kathmandu,76,Kathmandu-7,RSP,Ganesh Parajuli,FALSE
+Bagmati,3,Kathmandu,76,Kathmandu-7,NC,Pramodhari Guragai,FALSE
+Bagmati,3,Kathmandu,76,Kathmandu-7,UML,Prakash Shrestha,FALSE
+Bagmati,3,Kathmandu,76,Kathmandu-7,NCP,Basanta Prasad Manandhar,FALSE
+Bagmati,3,Kathmandu,76,Kathmandu-7,RPP,Lal Kumar Lama,FALSE
+Bagmati,3,Kathmandu,76,Kathmandu-7,UNP,Bimala Lama,FALSE
+Bagmati,3,Kathmandu,77,Kathmandu-8,RSP,Biraj Bhakta Shrestha,FALSE
+Bagmati,3,Kathmandu,77,Kathmandu-8,NC,Sapana Rajbhandari,FALSE
+Bagmati,3,Kathmandu,77,Kathmandu-8,UML,Rajesh Shakya,FALSE
+Bagmati,3,Kathmandu,77,Kathmandu-8,NCP,Suman Sayami,FALSE
+Bagmati,3,Kathmandu,77,Kathmandu-8,RPP,Nabin Shahi,FALSE
+Bagmati,3,Kathmandu,77,Kathmandu-8,UNP,Rajan Khadgi,FALSE
+Bagmati,3,Kathmandu,78,Kathmandu-9,RSP,Dol Prasad Aryal,FALSE
+Bagmati,3,Kathmandu,78,Kathmandu-9,NC,Nanu Bastola,FALSE
+Bagmati,3,Kathmandu,78,Kathmandu-9,UML,Ajaykranti Shakya,FALSE
+Bagmati,3,Kathmandu,78,Kathmandu-9,NCP,Radhakrishna Maharjan,FALSE
+Bagmati,3,Kathmandu,78,Kathmandu-9,RPP,Dilip Kumar Karki,FALSE
+Bagmati,3,Kathmandu,78,Kathmandu-9,UNP,Rameshwar Shrestha,FALSE
+Bagmati,3,Kathmandu,79,Kathmandu-10,RSP,Pradip Bista,FALSE
+Bagmati,3,Kathmandu,79,Kathmandu-10,NC,Himal Karki,FALSE
+Bagmati,3,Kathmandu,79,Kathmandu-10,UML,Binod Shrestha,FALSE
+Bagmati,3,Kathmandu,79,Kathmandu-10,NCP,Rupa Maharjan,FALSE
+Bagmati,3,Kathmandu,79,Kathmandu-10,RPP,Balaram Thapa,FALSE
+Bagmati,3,Kathmandu,79,Kathmandu-10,UNP,Dr. Rakesh Neupane,FALSE
+Bagmati,3,Bhaktapur,80,Bhaktapur-1,RSP,Rukesh Ranjit,FALSE
+Bagmati,3,Bhaktapur,80,Bhaktapur-1,NC,Kiran Neupane,FALSE
+Bagmati,3,Bhaktapur,80,Bhaktapur-1,UML,Som Prasad Mishra,FALSE
+Bagmati,3,Bhaktapur,80,Bhaktapur-1,NCP,Hariram Lawaju,FALSE
+Bagmati,3,Bhaktapur,80,Bhaktapur-1,RPP,Bharat Bahadur Khadka,FALSE
+Bagmati,3,Bhaktapur,80,Bhaktapur-1,UNP,Ramesh Balla,FALSE
+Bagmati,3,Bhaktapur,80,Bhaktapur-1,NMKP,Prem Suwal,FALSE
+Bagmati,3,Bhaktapur,81,Bhaktapur-2,RSP,Rajiv Khatri,FALSE
+Bagmati,3,Bhaktapur,81,Bhaktapur-2,NC,Kabir Rana,FALSE
+Bagmati,3,Bhaktapur,81,Bhaktapur-2,UML,Mahesh Basnet,FALSE
+Bagmati,3,Bhaktapur,81,Bhaktapur-2,NCP,Ram Prasad Sapkota,FALSE
+Bagmati,3,Bhaktapur,81,Bhaktapur-2,RPP,Bikram Thapa,FALSE
+Bagmati,3,Bhaktapur,81,Bhaktapur-2,UNP,Jitram Lama,FALSE
+Bagmati,3,Bhaktapur,81,Bhaktapur-2,NMKP,Ramesh Baidya,FALSE
+Bagmati,3,Lalitpur,82,Lalitpur-1,RSP,Buddha Ratna Maharjan,FALSE
+Bagmati,3,Lalitpur,82,Lalitpur-1,NC,Udaya Shumsher Rana,FALSE
+Bagmati,3,Lalitpur,82,Lalitpur-1,UML,Chetnath Sanjyel,FALSE
+Bagmati,3,Lalitpur,82,Lalitpur-1,NCP,Sunil Maharjan,FALSE
+Bagmati,3,Lalitpur,82,Lalitpur-1,RPP,Sajina Karki,FALSE
+Bagmati,3,Lalitpur,82,Lalitpur-1,UNP,Padam Tamang,FALSE
+Bagmati,3,Lalitpur,83,Lalitpur-2,RSP,Jagdish Kharel,FALSE
+Bagmati,3,Lalitpur,83,Lalitpur-2,NC,Prem Krishna Maharjan,FALSE
+Bagmati,3,Lalitpur,83,Lalitpur-2,UML,Prem Bahadur Maharjan,FALSE
+Bagmati,3,Lalitpur,83,Lalitpur-2,NCP,Rajendra Amatya,FALSE
+Bagmati,3,Lalitpur,83,Lalitpur-2,RPP,Raghubarraj Thapa,FALSE
+Bagmati,3,Lalitpur,83,Lalitpur-2,UNP,Rajaram Tandukar,FALSE
+Bagmati,3,Lalitpur,84,Lalitpur-3,RSP,Toshima Karki,FALSE
+Bagmati,3,Lalitpur,84,Lalitpur-3,NC,Jitendra Kumar Shrestha,FALSE
+Bagmati,3,Lalitpur,84,Lalitpur-3,UML,Sandan Thapa Magar,FALSE
+Bagmati,3,Lalitpur,84,Lalitpur-3,NCP,Rajkaji Maharjan,FALSE
+Bagmati,3,Lalitpur,84,Lalitpur-3,RPP,Sabin Khadka,FALSE
+Bagmati,3,Lalitpur,84,Lalitpur-3,UNP,Ashutosh Bijay Pant,FALSE
+Bagmati,3,Kavrepalanchok,85,Kavrepalanchok-1,RSP,Madhu Kumar Chaulagai,FALSE
+Bagmati,3,Kavrepalanchok,85,Kavrepalanchok-1,NC,Gunaraj Moktan,FALSE
+Bagmati,3,Kavrepalanchok,85,Kavrepalanchok-1,UML,Amit Lama,FALSE
+Bagmati,3,Kavrepalanchok,85,Kavrepalanchok-1,NCP,Dinanath Gautam,FALSE
+Bagmati,3,Kavrepalanchok,85,Kavrepalanchok-1,RPP,Nabaraj Satyal,FALSE
+Bagmati,3,Kavrepalanchok,85,Kavrepalanchok-1,UNP,Yogendra Lama,FALSE
+Bagmati,3,Kavrepalanchok,86,Kavrepalanchok-2,RSP,Badan Kumar Bhandari,FALSE
+Bagmati,3,Kavrepalanchok,86,Kavrepalanchok-2,NC,Madhu Prasad Acharya,FALSE
+Bagmati,3,Kavrepalanchok,86,Kavrepalanchok-2,UML,Ashok Kumar Byanju,FALSE
+Bagmati,3,Kavrepalanchok,86,Kavrepalanchok-2,NCP,Basundhara Humagain,FALSE
+Bagmati,3,Kavrepalanchok,86,Kavrepalanchok-2,RPP,Ranjib Shrestha,FALSE
+Bagmati,3,Kavrepalanchok,86,Kavrepalanchok-2,UNP,Jyotsana Sainju,FALSE
+Bagmati,3,Sindhupalchok,87,Sindhupalchok-1,RSP,Bharat Prasad Parajuli,FALSE
+Bagmati,3,Sindhupalchok,87,Sindhupalchok-1,NC,Jangabahadur Lama,FALSE
+Bagmati,3,Sindhupalchok,87,Sindhupalchok-1,UML,Hom Narayan Shrestha,FALSE
+Bagmati,3,Sindhupalchok,87,Sindhupalchok-1,NCP,Madhav Sapkota,FALSE
+Bagmati,3,Sindhupalchok,87,Sindhupalchok-1,RPP,Rammani Neupane,FALSE
+Bagmati,3,Sindhupalchok,88,Sindhupalchok-2,RSP,Ajay Shrestha,FALSE
+Bagmati,3,Sindhupalchok,88,Sindhupalchok-2,NC,Bangshalal Tamang,FALSE
+Bagmati,3,Sindhupalchok,88,Sindhupalchok-2,UML,Sher Bahadur Tamang,FALSE
+Bagmati,3,Sindhupalchok,88,Sindhupalchok-2,NCP,Yuvaraj Dulal,FALSE
+Bagmati,3,Sindhupalchok,88,Sindhupalchok-2,RPP,Gopikrishna Chaulagain,FALSE
+Bagmati,3,Makwanpur,89,Makwanpur-1,RSP,Prakash Gautam,FALSE
+Bagmati,3,Makwanpur,89,Makwanpur-1,NC,Mahalaxmi Upadhaya,FALSE
+Bagmati,3,Makwanpur,89,Makwanpur-1,UML,Rameshwor Rana,FALSE
+Bagmati,3,Makwanpur,89,Makwanpur-1,NCP,Bijay Gautam,FALSE
+Bagmati,3,Makwanpur,89,Makwanpur-1,RPP,Deepak Bahadur Singh,FALSE
+Bagmati,3,Makwanpur,89,Makwanpur-1,UNP,Surendra Lama,FALSE
+Bagmati,3,Makwanpur,90,Makwanpur-2,RSP,Prashant Uprety,FALSE
+Bagmati,3,Makwanpur,90,Makwanpur-2,NC,Buddha Lama,FALSE
+Bagmati,3,Makwanpur,90,Makwanpur-2,UML,Mahesh Bartaula,FALSE
+Bagmati,3,Makwanpur,90,Makwanpur-2,NCP,Labasher Bista,FALSE
+Bagmati,3,Makwanpur,90,Makwanpur-2,RPP,Ram Bahadur Thokar,FALSE
+Bagmati,3,Makwanpur,90,Makwanpur-2,UNP,Prabin Kumar Syangtan,FALSE
+Bagmati,3,Chitwan,91,Chitwan-1,RSP,Hari Dhakal,FALSE
+Bagmati,3,Chitwan,91,Chitwan-1,NC,Rajendra Burlakoti,FALSE
+Bagmati,3,Chitwan,91,Chitwan-1,UML,Kamalraj Pathak,FALSE
+Bagmati,3,Chitwan,91,Chitwan-1,NCP,Krishna Panta,FALSE
+Bagmati,3,Chitwan,91,Chitwan-1,RPP,Balaram Khanal,FALSE
+Bagmati,3,Chitwan,91,Chitwan-1,UNP,Dhan Bahadur Gurung,FALSE
+Bagmati,3,Chitwan,92,Chitwan-2,RSP,Rabi Lamichhane,FALSE
+Bagmati,3,Chitwan,92,Chitwan-2,NC,Mina Kumari Kharel,FALSE
+Bagmati,3,Chitwan,92,Chitwan-2,UML,Asmin Ghimire,FALSE
+Bagmati,3,Chitwan,92,Chitwan-2,NCP,Pratap Gurung,FALSE
+Bagmati,3,Chitwan,92,Chitwan-2,RPP,Jagadish Adhikari,FALSE
+Bagmati,3,Chitwan,92,Chitwan-2,UNP,Nikumar Pakhrin,FALSE
+Bagmati,3,Chitwan,93,Chitwan-3,RSP,Sobita Gautam,FALSE
+Bagmati,3,Chitwan,93,Chitwan-3,NC,Tek Prasad Gurung,FALSE
+Bagmati,3,Chitwan,93,Chitwan-3,UML,Shankarraj Thapaliya,FALSE
+Bagmati,3,Chitwan,93,Chitwan-3,NCP,Renu Dahal,FALSE
+Bagmati,3,Chitwan,93,Chitwan-3,RPP,Dipak Thapa Magar,FALSE
+Bagmati,3,Chitwan,93,Chitwan-3,UNP,Dambar Bahadur Tamang,FALSE
+Gandaki,4,Gorkha,94,Gorkha-1,RSP,Sudan Gurung,FALSE
+Gandaki,4,Gorkha,94,Gorkha-1,NC,Prem Kumar Khatri,FALSE
+Gandaki,4,Gorkha,94,Gorkha-1,UML,Ramchandra Lamichhane,FALSE
+Gandaki,4,Gorkha,94,Gorkha-1,NCP,Hariraj Adhikari,FALSE
+Gandaki,4,Gorkha,94,Gorkha-1,RPP,Kedarmani Khanal,FALSE
+Gandaki,4,Gorkha,95,Gorkha-2,RSP,Kabindra Burlakoti,FALSE
+Gandaki,4,Gorkha,95,Gorkha-2,NC,Prakash Chandra Dawadi,FALSE
+Gandaki,4,Gorkha,95,Gorkha-2,UML,Milan Gurung,FALSE
+Gandaki,4,Gorkha,95,Gorkha-2,NCP,Lekhnath Neupane,FALSE
+Gandaki,4,Gorkha,95,Gorkha-2,RPP,Kul Bahadur Basnet,FALSE
+Gandaki,4,Manang,96,Manang-1,NC,Tek Bahadur Gurung,FALSE
+Gandaki,4,Manang,96,Manang-1,NCP,Yasodha Subedi Gurung,FALSE
+Gandaki,4,Manang,96,Manang-1,MNO,Ram Bahadur Ghale,FALSE
+Gandaki,4,Lamjung,97,Lamjung-1,RSP,Dharma Raj K.C.,FALSE
+Gandaki,4,Lamjung,97,Lamjung-1,NC,Gam Prasad Gurung,FALSE
+Gandaki,4,Lamjung,97,Lamjung-1,UML,Prithvi Subba Gurung,FALSE
+Gandaki,4,Lamjung,97,Lamjung-1,NCP,Hari Jung Tamang,FALSE
+Gandaki,4,Lamjung,97,Lamjung-1,RPP,Kebindra Jung Gurung,FALSE
+Gandaki,4,Kaski,98,Kaski-1,RSP,Khadak Raj Paudel,FALSE
+Gandaki,4,Kaski,98,Kaski-1,NC,Rajendra Prasad Paudel,FALSE
+Gandaki,4,Kaski,98,Kaski-1,UML,Prithvi Subba Gurung,FALSE
+Gandaki,4,Kaski,98,Kaski-1,NCP,Rekha Sharma,FALSE
+Gandaki,4,Kaski,98,Kaski-1,RPP,Sharada Bahadur Gurung,FALSE
+Gandaki,4,Kaski,99,Kaski-2,RSP,Swarnim Wagle,FALSE
+Gandaki,4,Kaski,99,Kaski-2,NC,Dhan Bahadur Budha,FALSE
+Gandaki,4,Kaski,99,Kaski-2,UML,Krishna Bahadur Mahara,FALSE
+Gandaki,4,Kaski,99,Kaski-2,NCP,Nar Bahadur Pun,FALSE
+Gandaki,4,Kaski,99,Kaski-2,RPP,Dawa Lama,FALSE
+Gandaki,4,Tanahun,100,Tanahun-1,RSP,Swarnim Wagle,FALSE
+Gandaki,4,Tanahun,100,Tanahun-1,NC,Bijaya Kumar Gauchan,FALSE
+Gandaki,4,Tanahun,100,Tanahun-1,UML,Binod Prasad Chaulagain,FALSE
+Gandaki,4,Tanahun,100,Tanahun-1,NCP,Shyam Bahadur Gurung,FALSE
+Gandaki,4,Tanahun,100,Tanahun-1,RPP,Prem Bahadur Gauchan,FALSE
+Gandaki,4,Tanahun,101,Tanahun-2,RSP,Kamal Thapa Magar,FALSE
+Gandaki,4,Tanahun,101,Tanahun-2,NC,Rabindra Prasad Adhikari,FALSE
+Gandaki,4,Tanahun,101,Tanahun-2,UML,Bishnu Prasad Paudel,FALSE
+Gandaki,4,Tanahun,101,Tanahun-2,NCP,Ram Prasad Koirala,FALSE
+Gandaki,4,Tanahun,101,Tanahun-2,RPP,Laxman Thapa,FALSE
+Gandaki,4,Syangja,102,Syangja-1,RSP,Ganesh Prasad Regmi,FALSE
+Gandaki,4,Syangja,102,Syangja-1,NC,Surya Bahadur Thapa Magar,FALSE
+Gandaki,4,Syangja,102,Syangja-1,UML,Rameshwor Prasad Paudel,FALSE
+Gandaki,4,Syangja,102,Syangja-1,NCP,Hari Bahadur Thapa,FALSE
+Gandaki,4,Syangja,102,Syangja-1,RPP,Krishna Prasad Panta,FALSE
+Gandaki,4,Syangja,103,Syangja-2,RSP,Durga Prasad Poudel,FALSE
+Gandaki,4,Syangja,103,Syangja-2,NC,Surendra Raj Acharya,FALSE
+Gandaki,4,Syangja,103,Syangja-2,UML,Ramhari Baral,FALSE
+Gandaki,4,Syangja,103,Syangja-2,NCP,Tilak Pariyar,FALSE
+Gandaki,4,Syangja,103,Syangja-2,RPP,Moti Lal Pokhrel,FALSE
+Gandaki,4,Parbat,104,Parbat-1,RSP,Lekhnath Neupane,FALSE
+Gandaki,4,Parbat,104,Parbat-1,NC,Yagya Bahadur Thapa,FALSE
+Gandaki,4,Parbat,104,Parbat-1,UML,Kuber Prasad Sharma,FALSE
+Gandaki,4,Parbat,104,Parbat-1,NCP,Lal Bahadur Khadka,FALSE
+Gandaki,4,Parbat,104,Parbat-1,RPP,Ghanashyam Khanal,FALSE
+Gandaki,4,Baglung,105,Baglung-1,RSP,Prabin Kandel,FALSE
+Gandaki,4,Baglung,105,Baglung-1,NC,Sher Bahadur Deuba,FALSE
+Gandaki,4,Baglung,105,Baglung-1,UML,Bikram Bahadur Thapa,FALSE
+Gandaki,4,Baglung,105,Baglung-1,NCP,Lal Bahadur Baniya,FALSE
+Gandaki,4,Baglung,105,Baglung-1,RPP,Purna Bahadur Khadka,FALSE
+Gandaki,4,Baglung,106,Baglung-2,RSP,Ram Bahadur Magar,FALSE
+Gandaki,4,Baglung,106,Baglung-2,NC,Padam Bahadur Gurung,FALSE
+Gandaki,4,Baglung,106,Baglung-2,UML,Devi Prasad Bhatt,FALSE
+Gandaki,4,Baglung,106,Baglung-2,NCP,Ganesh Prasad Paudel,FALSE
+Gandaki,4,Baglung,106,Baglung-2,RPP,Til Bahadur Pun,FALSE
+Gandaki,4,Myagdi,107,Myagdi-1,RSP,Bikash Thapa,FALSE
+Gandaki,4,Myagdi,107,Myagdi-1,NC,Raam Bahadur Thapa,FALSE
+Gandaki,4,Myagdi,107,Myagdi-1,UML,Hum Bahadur Budha Magar,FALSE
+Gandaki,4,Myagdi,107,Myagdi-1,NCP,Prem Bahadur Ale,FALSE
+Gandaki,4,Myagdi,107,Myagdi-1,RPP,Tek Bahadur Budha,FALSE
+Gandaki,4,Myagdi,107,Myagdi-1,IND,Mahabir Pun,TRUE
+Gandaki,4,Mustang,108,Mustang-1,NC,Dhana Bahadur Sherchan,FALSE
+Gandaki,4,Mustang,108,Mustang-1,UML,Lobsang Lama,FALSE
+Gandaki,4,Mustang,108,Mustang-1,NCP,Sangita Gurung,FALSE
+Gandaki,4,Mustang,108,Mustang-1,RPP,Gyanbir Sherchan,FALSE
+Gandaki,4,Nawalpur,109,Nawalpur-1,RSP,Balram Adhikari,FALSE
+Gandaki,4,Nawalpur,109,Nawalpur-1,NC,Dil Bahadur Gurung,FALSE
+Gandaki,4,Nawalpur,109,Nawalpur-1,UML,Gopal Bahadur Raut,FALSE
+Gandaki,4,Nawalpur,109,Nawalpur-1,NCP,Bimal Poudel,FALSE
+Gandaki,4,Nawalpur,109,Nawalpur-1,RPP,Ram Bahadur Kumal,FALSE
+Gandaki,4,Nawalpur,110,Nawalpur-2,RSP,Deepak Prasad Paudel,FALSE
+Gandaki,4,Nawalpur,110,Nawalpur-2,NC,Bharat Prasad Gupta,FALSE
+Gandaki,4,Nawalpur,110,Nawalpur-2,UML,Surendra Prasad Khadka,FALSE
+Gandaki,4,Nawalpur,110,Nawalpur-2,NCP,Bhumi Prasad Upadhyaya,FALSE
+Gandaki,4,Nawalpur,110,Nawalpur-2,RPP,Lal Bahadur Hamal,FALSE
+Lumbini,5,Rupandehi,111,Rupandehi-1,RSP,Amar Bahadur Thapa,FALSE
+Lumbini,5,Rupandehi,111,Rupandehi-1,NC,Ramesh Prasad Lekhak,FALSE
+Lumbini,5,Rupandehi,111,Rupandehi-1,UML,Tika Ram Pun,FALSE
+Lumbini,5,Rupandehi,111,Rupandehi-1,NCP,Shital Prasad Chaudhary,FALSE
+Lumbini,5,Rupandehi,111,Rupandehi-1,RPP,Siddhi Prasad Neupane,FALSE
+Lumbini,5,Rupandehi,112,Rupandehi-2,RSP,Kamal Thapa Chhetri,FALSE
+Lumbini,5,Rupandehi,112,Rupandehi-2,NC,Hari Prasad Paudel,FALSE
+Lumbini,5,Rupandehi,112,Rupandehi-2,UML,Mahesh Shrestha,FALSE
+Lumbini,5,Rupandehi,112,Rupandehi-2,NCP,Hom Bahadur Thapa,FALSE
+Lumbini,5,Rupandehi,112,Rupandehi-2,RPP,Bharat Prasad Khanal,FALSE
+Lumbini,5,Rupandehi,113,Rupandehi-3,RSP,Surendra Prasad Pandey,FALSE
+Lumbini,5,Rupandehi,113,Rupandehi-3,NC,Sita Gurung,FALSE
+Lumbini,5,Rupandehi,113,Rupandehi-3,UML,Bed Prasad Sharma,FALSE
+Lumbini,5,Rupandehi,113,Rupandehi-3,NCP,Tilak Pariyar,FALSE
+Lumbini,5,Rupandehi,113,Rupandehi-3,RPP,Kedar Nath Acharya,FALSE
+Lumbini,5,Kapilvastu,114,Kapilvastu-1,RSP,Baburam Chaudhary,FALSE
+Lumbini,5,Kapilvastu,114,Kapilvastu-1,NC,Anita Devi Chaudhary,FALSE
+Lumbini,5,Kapilvastu,114,Kapilvastu-1,UML,Jitendra Kumar Sonwal,FALSE
+Lumbini,5,Kapilvastu,114,Kapilvastu-1,NCP,Pradeep Kumar Gyawali,FALSE
+Lumbini,5,Kapilvastu,114,Kapilvastu-1,RPP,Bharat Raj Poudel,FALSE
+Lumbini,5,Kapilvastu,115,Kapilvastu-2,RSP,Narayan Prasad Dhakal,FALSE
+Lumbini,5,Kapilvastu,115,Kapilvastu-2,NC,Ramsahay Prasad Yadav,FALSE
+Lumbini,5,Kapilvastu,115,Kapilvastu-2,UML,Krishna Prasad Sitaula,FALSE
+Lumbini,5,Kapilvastu,115,Kapilvastu-2,NCP,Sher Bahadur Deuba,FALSE
+Lumbini,5,Kapilvastu,115,Kapilvastu-2,RPP,Ram Chandra Paudel,FALSE
+Lumbini,5,Palpa,116,Palpa-1,RSP,Shankar Prasad Pokhrel,FALSE
+Lumbini,5,Palpa,116,Palpa-1,NC,Kiran Gurung,FALSE
+Lumbini,5,Palpa,116,Palpa-1,UML,Radheshyam Adhikari,FALSE
+Lumbini,5,Palpa,116,Palpa-1,NCP,Girdhari Sharma,FALSE
+Lumbini,5,Palpa,116,Palpa-1,RPP,Naraj Bahadur Thapa,FALSE
+Lumbini,5,Palpa,117,Palpa-2,RSP,Dipendra Bahadur Pal,FALSE
+Lumbini,5,Palpa,117,Palpa-2,NC,Balkrishna Khand,FALSE
+Lumbini,5,Palpa,117,Palpa-2,UML,Kamal Raj Acharya,FALSE
+Lumbini,5,Palpa,117,Palpa-2,NCP,Kamal Bahadur Shah,FALSE
+Lumbini,5,Palpa,117,Palpa-2,RPP,Bhawani Prasad Kharel,FALSE
+Lumbini,5,Gulmi,118,Gulmi-1,RSP,Krishna Bahadur Raut,FALSE
+Lumbini,5,Gulmi,118,Gulmi-1,NC,Ramesh Prasad Ghimire,FALSE
+Lumbini,5,Gulmi,118,Gulmi-1,UML,Mahesh Prasad Basnet,FALSE
+Lumbini,5,Gulmi,118,Gulmi-1,NCP,Mohan Bahadur Basnet,FALSE
+Lumbini,5,Gulmi,118,Gulmi-1,RPP,Gopal Prasad Ghimire,FALSE
+Lumbini,5,Gulmi,119,Gulmi-2,RSP,Dhan Bahadur Magar,FALSE
+Lumbini,5,Gulmi,119,Gulmi-2,NC,Purna Bahadur Gharti,FALSE
+Lumbini,5,Gulmi,119,Gulmi-2,UML,Laxman Prasad Ghimire,FALSE
+Lumbini,5,Gulmi,119,Gulmi-2,NCP,Mohan Bahadur K.C.,FALSE
+Lumbini,5,Gulmi,119,Gulmi-2,RPP,Bhim Bahadur Rana,FALSE
+Lumbini,5,Arghakhanchi,120,Arghakhanchi-1,RSP,Narendra Prasad Panta,FALSE
+Lumbini,5,Arghakhanchi,120,Arghakhanchi-1,NC,Ramnarayan Bidari,FALSE
+Lumbini,5,Arghakhanchi,120,Arghakhanchi-1,UML,Bishnu Prasad Paudel,FALSE
+Lumbini,5,Arghakhanchi,120,Arghakhanchi-1,NCP,Shiva Prasad Humagain,FALSE
+Lumbini,5,Arghakhanchi,120,Arghakhanchi-1,RPP,Dil Bahadur Gharti,FALSE
+Lumbini,5,Pyuthan,121,Pyuthan-1,RSP,Gokul Prasad Baskota,FALSE
+Lumbini,5,Pyuthan,121,Pyuthan-1,NC,Sita Ram Updhyaya,FALSE
+Lumbini,5,Pyuthan,121,Pyuthan-1,UML,Dipak Bohara,FALSE
+Lumbini,5,Pyuthan,121,Pyuthan-1,NCP,Bimala Gharti,FALSE
+Lumbini,5,Pyuthan,121,Pyuthan-1,RPP,Padam Bahadur K.C.,FALSE
+Lumbini,5,Rolpa,122,Rolpa-1,RSP,Purna Bahadur Gharti Magar,FALSE
+Lumbini,5,Rolpa,122,Rolpa-1,NC,Chitra Bahadur K.C.,FALSE
+Lumbini,5,Rolpa,122,Rolpa-1,UML,Gopal Prasad Bohara,FALSE
+Lumbini,5,Rolpa,122,Rolpa-1,NCP,Post Bahadur Bogati,FALSE
+Lumbini,5,Rolpa,122,Rolpa-1,RPP,Tek Bahadur Gharti,FALSE
+Lumbini,5,Rukum East,123,Rukum East-1,RSP,Govinda Prasad Sharma,FALSE
+Lumbini,5,Rukum East,123,Rukum East-1,NC,Kul Bahadur Gurung,FALSE
+Lumbini,5,Rukum East,123,Rukum East-1,UML,Agni Prasad Sapkota,FALSE
+Lumbini,5,Rukum East,123,Rukum East-1,NCP,Pampha Bhusal,FALSE
+Lumbini,5,Rukum East,123,Rukum East-1,RPP,Dhan Bahadur Khadka,FALSE
+Lumbini,5,Dang,124,Dang-1,RSP,Pramod Kumar Upadhyaya,FALSE
+Lumbini,5,Dang,124,Dang-1,NC,Sher Bahadur Malla,FALSE
+Lumbini,5,Dang,124,Dang-1,UML,Prem Bahadur Ale,FALSE
+Lumbini,5,Dang,124,Dang-1,NCP,Ram Bahadur Thapa,FALSE
+Lumbini,5,Dang,124,Dang-1,RPP,Khem Raj Regmi,FALSE
+Lumbini,5,Dang,125,Dang-2,RSP,Lal Bahadur Thapa,FALSE
+Lumbini,5,Dang,125,Dang-2,NC,Bhim Prasad Chaudhary,FALSE
+Lumbini,5,Dang,125,Dang-2,UML,Surendra Bahadur Shahi,FALSE
+Lumbini,5,Dang,125,Dang-2,NCP,Lila Prasad Shrestha,FALSE
+Lumbini,5,Dang,125,Dang-2,RPP,Ram Bahadur Thapa Magar,FALSE
+Lumbini,5,Banke,126,Banke-1,RSP,Santosh Kumar Chalise,FALSE
+Lumbini,5,Banke,126,Banke-1,NC,Dilendra Prasad Badu,FALSE
+Lumbini,5,Banke,126,Banke-1,UML,Bishnu Prasad Paudel,FALSE
+Lumbini,5,Banke,126,Banke-1,NCP,Purna Bahadur Khadka,FALSE
+Lumbini,5,Banke,126,Banke-1,RPP,Gajendra Bahadur Hamal,FALSE
+Lumbini,5,Banke,127,Banke-2,RSP,Nawaraj Silwal,FALSE
+Lumbini,5,Banke,127,Banke-2,NC,Lila Prasad Giri,FALSE
+Lumbini,5,Banke,127,Banke-2,UML,Krishna Bahadur Raut,FALSE
+Lumbini,5,Banke,127,Banke-2,NCP,Mohan Bahadur Chand,FALSE
+Lumbini,5,Banke,127,Banke-2,RPP,Sher Bahadur Thapa,FALSE
+Lumbini,5,Bardiya,128,Bardiya-1,RSP,Ghanashyam Ayer,FALSE
+Lumbini,5,Bardiya,128,Bardiya-1,NC,Rekha Sharma,FALSE
+Lumbini,5,Bardiya,128,Bardiya-1,UML,Mahesh Prasad Basnet,FALSE
+Lumbini,5,Bardiya,128,Bardiya-1,NCP,Nar Bahadur Chand,FALSE
+Lumbini,5,Bardiya,128,Bardiya-1,RPP,Dilendra Bahadur Chand,FALSE
+Lumbini,5,Bardiya,129,Bardiya-2,RSP,Lekh Nath Regmi,FALSE
+Lumbini,5,Bardiya,129,Bardiya-2,NC,Ganga Prasad Ayer,FALSE
+Lumbini,5,Bardiya,129,Bardiya-2,UML,Karna Bahadur Thapa,FALSE
+Lumbini,5,Bardiya,129,Bardiya-2,NCP,Surya Bahadur Khadka,FALSE
+Lumbini,5,Bardiya,129,Bardiya-2,RPP,Laxmi Prasad Tharu,FALSE
+Lumbini,5,Parasi,130,Parasi-1,RSP,Sanjay Kumar Gupta,FALSE
+Lumbini,5,Parasi,130,Parasi-1,NC,Chitra Lekha Yadav,FALSE
+Lumbini,5,Parasi,130,Parasi-1,UML,Narayan Prasad Sah,FALSE
+Lumbini,5,Parasi,130,Parasi-1,NCP,Shiv Prasad Humagain,FALSE
+Lumbini,5,Parasi,130,Parasi-1,RPP,Gyan Bahadur Shahi,FALSE
+Karnali,6,Dolpa,131,Dolpa-1,NC,Karna Bahadur Budha,FALSE
+Karnali,6,Dolpa,131,Dolpa-1,UML,Jit Bahadur Buda,FALSE
+Karnali,6,Dolpa,131,Dolpa-1,NCP,Ram Bahadur Budha,FALSE
+Karnali,6,Dolpa,131,Dolpa-1,RPP,Man Bahadur Budha,FALSE
+Karnali,6,Mugu,132,Mugu-1,NC,Khadga Bahadur Shahi,FALSE
+Karnali,6,Mugu,132,Mugu-1,UML,Sher Bahadur Shahi,FALSE
+Karnali,6,Mugu,132,Mugu-1,NCP,Gokul Prasad Baskota,FALSE
+Karnali,6,Mugu,132,Mugu-1,RPP,Bikram Bahadur Shahi,FALSE
+Karnali,6,Humla,133,Humla-1,NC,Jayapati Rokaya,FALSE
+Karnali,6,Humla,133,Humla-1,UML,Mahendra Bahadur Shahi,FALSE
+Karnali,6,Humla,133,Humla-1,NCP,Narayan Bahadur Rokaya,FALSE
+Karnali,6,Humla,133,Humla-1,RPP,Gokul Bahadur Rokaya,FALSE
+Karnali,6,Jumla,134,Jumla-1,NC,Deep Bahadur Shahi,FALSE
+Karnali,6,Jumla,134,Jumla-1,UML,Gopal Bahadur Hamal,FALSE
+Karnali,6,Jumla,134,Jumla-1,NCP,Ram Bahadur Shahi,FALSE
+Karnali,6,Jumla,134,Jumla-1,RPP,Dhan Bahadur Shahi,FALSE
+Karnali,6,Kalikot,135,Kalikot-1,NC,Harsh Bahadur Bam,FALSE
+Karnali,6,Kalikot,135,Kalikot-1,UML,Nawaraj Saud,FALSE
+Karnali,6,Kalikot,135,Kalikot-1,NCP,Gopal Bahadur Rokaya,FALSE
+Karnali,6,Kalikot,135,Kalikot-1,RPP,Harka Bahadur Bam,FALSE
+Karnali,6,Salyan,136,Salyan-1,NC,Kesh Bahadur Bishta,FALSE
+Karnali,6,Salyan,136,Salyan-1,UML,Narayan Prasad Dhakal,FALSE
+Karnali,6,Salyan,136,Salyan-1,NCP,Tulsi Bahadur Hamal,FALSE
+Karnali,6,Salyan,136,Salyan-1,RPP,Dhan Bahadur Shahi,FALSE
+Karnali,6,Jajarkot,137,Jajarkot-1,NC,Ram Bahadur Bhandari,FALSE
+Karnali,6,Jajarkot,137,Jajarkot-1,UML,Deepak Prasad Bhandari,FALSE
+Karnali,6,Jajarkot,137,Jajarkot-1,NCP,Prem Bahadur Singh,FALSE
+Karnali,6,Jajarkot,137,Jajarkot-1,RPP,Dhan Bahadur Bhandari,FALSE
+Karnali,6,Rukum West,138,Rukum West-1,NC,Gopal Bahadur Magar,FALSE
+Karnali,6,Rukum West,138,Rukum West-1,UML,Khagendra Bahadur Magar,FALSE
+Karnali,6,Rukum West,138,Rukum West-1,NCP,Nawaraj Oli,FALSE
+Karnali,6,Rukum West,138,Rukum West-1,RPP,Khadga Bahadur Shahi,FALSE
+Karnali,6,Dailekh,139,Dailekh-1,NC,Prithvi Bahadur Singh,FALSE
+Karnali,6,Dailekh,139,Dailekh-1,UML,Tara Bahadur Singh,FALSE
+Karnali,6,Dailekh,139,Dailekh-1,NCP,Gopal Bahadur Thapa,FALSE
+Karnali,6,Dailekh,139,Dailekh-1,RPP,Nabin Bahadur Singh,FALSE
+Karnali,6,Dailekh,140,Dailekh-2,NC,Lila Bahadur Baniya,FALSE
+Karnali,6,Dailekh,140,Dailekh-2,UML,Sher Bahadur Thapa,FALSE
+Karnali,6,Dailekh,140,Dailekh-2,NCP,Prem Bahadur Rawal,FALSE
+Karnali,6,Dailekh,140,Dailekh-2,RPP,Ram Bahadur Rokaya,FALSE
+Karnali,6,Surkhet,141,Surkhet-1,RSP,Ganesh Prasad Lamichhane,FALSE
+Karnali,6,Surkhet,141,Surkhet-1,NC,Rekha Sharma,FALSE
+Karnali,6,Surkhet,141,Surkhet-1,UML,Mahendra Bahadur Shahi,FALSE
+Karnali,6,Surkhet,141,Surkhet-1,NCP,Prem Bahadur Ale,FALSE
+Karnali,6,Surkhet,141,Surkhet-1,RPP,Narayan Bahadur Rana,FALSE
+Karnali,6,Surkhet,142,Surkhet-2,RSP,Nar Bahadur Chand,FALSE
+Karnali,6,Surkhet,142,Surkhet-2,NC,Kalpana Dhamala,FALSE
+Karnali,6,Surkhet,142,Surkhet-2,UML,Gopal Bahadur Hamal,FALSE
+Karnali,6,Surkhet,142,Surkhet-2,NCP,Nanda Bahadur Pun,FALSE
+Karnali,6,Surkhet,142,Surkhet-2,RPP,Tek Bahadur Chand,FALSE
+Sudurpashchim,7,Bajura,143,Bajura-1,NC,Janakraj Giri,FALSE
+Sudurpashchim,7,Bajura,143,Bajura-1,UML,Mahendra Bahadur Shahi,FALSE
+Sudurpashchim,7,Bajura,143,Bajura-1,NCP,Gopal Bahadur Thapa,FALSE
+Sudurpashchim,7,Bajura,143,Bajura-1,RPP,Khem Bahadur Thapa,FALSE
+Sudurpashchim,7,Bajhang,144,Bajhang-1,NC,Prakash Snehi Rasaili,FALSE
+Sudurpashchim,7,Bajhang,144,Bajhang-1,UML,Surendra Bahadur Bista,FALSE
+Sudurpashchim,7,Bajhang,144,Bajhang-1,NCP,Ram Bahadur Bista,FALSE
+Sudurpashchim,7,Bajhang,144,Bajhang-1,RPP,Dhan Bahadur Bista,FALSE
+Sudurpashchim,7,Bajhang,145,Bajhang-2,NC,Lal Bahadur Bista,FALSE
+Sudurpashchim,7,Bajhang,145,Bajhang-2,UML,Nawaraj Bista,FALSE
+Sudurpashchim,7,Bajhang,145,Bajhang-2,NCP,Man Bahadur Bista,FALSE
+Sudurpashchim,7,Bajhang,145,Bajhang-2,RPP,Khadga Bahadur Bista,FALSE
+Sudurpashchim,7,Doti,146,Doti-1,NC,Bharat Bahadur Khadka,FALSE
+Sudurpashchim,7,Doti,146,Doti-1,UML,Narendra Bahadur Thapa,FALSE
+Sudurpashchim,7,Doti,146,Doti-1,NCP,Prem Bahadur Bohara,FALSE
+Sudurpashchim,7,Doti,146,Doti-1,RPP,Gopal Prasad Thapa,FALSE
+Sudurpashchim,7,Doti,147,Doti-2,NC,Prem Bahadur Saud,FALSE
+Sudurpashchim,7,Doti,147,Doti-2,UML,Kamal Bahadur Shah,FALSE
+Sudurpashchim,7,Doti,147,Doti-2,NCP,Man Bahadur Bist,FALSE
+Sudurpashchim,7,Doti,147,Doti-2,RPP,Bikram Bahadur Bist,FALSE
+Sudurpashchim,7,Achham,148,Achham-1,NC,Bharat Swar,FALSE
+Sudurpashchim,7,Achham,148,Achham-1,UML,Surendra Bahadur Bist,FALSE
+Sudurpashchim,7,Achham,148,Achham-1,NCP,Narayan Bahadur Bist,FALSE
+Sudurpashchim,7,Achham,148,Achham-1,RPP,Dhan Bahadur Bist,FALSE
+Sudurpashchim,7,Achham,149,Achham-2,NC,Pushpa Bahadur Shah,FALSE
+Sudurpashchim,7,Achham,149,Achham-2,UML,Khem Bahadur Bist,FALSE
+Sudurpashchim,7,Achham,149,Achham-2,NCP,Gopal Bahadur Shah,FALSE
+Sudurpashchim,7,Achham,149,Achham-2,RPP,Narayan Bahadur Rokaya,FALSE
+Sudurpashchim,7,Dadeldhura,150,Dadeldhura-1,NC,Ram Bahadur Thapa,FALSE
+Sudurpashchim,7,Dadeldhura,150,Dadeldhura-1,UML,Sher Bahadur Thapa,FALSE
+Sudurpashchim,7,Dadeldhura,150,Dadeldhura-1,NCP,Gopal Bahadur Thapa,FALSE
+Sudurpashchim,7,Dadeldhura,150,Dadeldhura-1,RPP,Khadga Bahadur Thapa,FALSE
+Sudurpashchim,7,Baitadi,151,Baitadi-1,NC,Chatur Bahadur Chand,FALSE
+Sudurpashchim,7,Baitadi,151,Baitadi-1,UML,Nawaraj Bist,FALSE
+Sudurpashchim,7,Baitadi,151,Baitadi-1,NCP,Deepak Bahadur Bist,FALSE
+Sudurpashchim,7,Baitadi,151,Baitadi-1,RPP,Rajendra Bahadur Bist,FALSE
+Sudurpashchim,7,Baitadi,152,Baitadi-2,NC,Prem Bahadur Joshi,FALSE
+Sudurpashchim,7,Baitadi,152,Baitadi-2,UML,Gopal Bahadur Joshi,FALSE
+Sudurpashchim,7,Baitadi,152,Baitadi-2,NCP,Ram Bahadur Joshi,FALSE
+Sudurpashchim,7,Baitadi,152,Baitadi-2,RPP,Sher Bahadur Joshi,FALSE
+Sudurpashchim,7,Darchula,153,Darchula-1,NC,Dharmanand Joshi,FALSE
+Sudurpashchim,7,Darchula,153,Darchula-1,UML,Narayan Bahadur Bist,FALSE
+Sudurpashchim,7,Darchula,153,Darchula-1,NCP,Gopal Bahadur Bist,FALSE
+Sudurpashchim,7,Darchula,153,Darchula-1,RPP,Khadga Bahadur Bist,FALSE
+Sudurpashchim,7,Kailali,154,Kailali-1,RSP,Lila Prasad Bohara,FALSE
+Sudurpashchim,7,Kailali,154,Kailali-1,NC,Janakraj Chaudhary,FALSE
+Sudurpashchim,7,Kailali,154,Kailali-1,UML,Surendra Bahadur Shahi,FALSE
+Sudurpashchim,7,Kailali,154,Kailali-1,NCP,Purna Bahadur Chand,FALSE
+Sudurpashchim,7,Kailali,154,Kailali-1,RPP,Gopal Bahadur Hamal,FALSE
+Sudurpashchim,7,Kailali,155,Kailali-2,RSP,Narayan Bahadur Saud,FALSE
+Sudurpashchim,7,Kailali,155,Kailali-2,NC,Vijay Swar,FALSE
+Sudurpashchim,7,Kailali,155,Kailali-2,UML,Khadga Bahadur Bist,FALSE
+Sudurpashchim,7,Kailali,155,Kailali-2,NCP,Bikram Bahadur Thapa,FALSE
+Sudurpashchim,7,Kailali,155,Kailali-2,RPP,Ram Bahadur Saud,FALSE
+Sudurpashchim,7,Kailali,156,Kailali-3,RSP,Dipendra Bahadur Pal,FALSE
+Sudurpashchim,7,Kailali,156,Kailali-3,NC,Dilendra Prasad Badu,FALSE
+Sudurpashchim,7,Kailali,156,Kailali-3,UML,Sher Bahadur Deuba,FALSE
+Sudurpashchim,7,Kailali,156,Kailali-3,NCP,Mohan Bahadur Chand,FALSE
+Sudurpashchim,7,Kailali,156,Kailali-3,RPP,Shanti Devi Thapa,FALSE
+Sudurpashchim,7,Kailali,157,Kailali-4,RSP,Ganesh Prasad Lamichhane,FALSE
+Sudurpashchim,7,Kailali,157,Kailali-4,NC,Karna Bahadur Tharu,FALSE
+Sudurpashchim,7,Kailali,157,Kailali-4,UML,Nawaraj Sharma,FALSE
+Sudurpashchim,7,Kailali,157,Kailali-4,NCP,Tara Devi Bam,FALSE
+Sudurpashchim,7,Kailali,157,Kailali-4,RPP,Dhan Bahadur Rana,FALSE
+Sudurpashchim,7,Kanchanpur,158,Kanchanpur-1,RSP,Surendra Bahadur Bist,FALSE
+Sudurpashchim,7,Kanchanpur,158,Kanchanpur-1,NC,Narayan Prasad Sah,FALSE
+Sudurpashchim,7,Kanchanpur,158,Kanchanpur-1,UML,Gopal Bahadur Rokaya,FALSE
+Sudurpashchim,7,Kanchanpur,158,Kanchanpur-1,NCP,Ram Bahadur Saud,FALSE
+Sudurpashchim,7,Kanchanpur,158,Kanchanpur-1,RPP,Laxmi Prasad Joshi,FALSE
+Sudurpashchim,7,Kanchanpur,159,Kanchanpur-2,RSP,Narayan Bahadur Bist,FALSE
+Sudurpashchim,7,Kanchanpur,159,Kanchanpur-2,NC,Dhan Bahadur Bist,FALSE
+Sudurpashchim,7,Kanchanpur,159,Kanchanpur-2,UML,Khadga Bahadur Bist,FALSE
+Sudurpashchim,7,Kanchanpur,159,Kanchanpur-2,NCP,Sher Bahadur Bist,FALSE
+Sudurpashchim,7,Kanchanpur,159,Kanchanpur-2,RPP,Gopal Bahadur Joshi,FALSE
+Sudurpashchim,7,Kanchanpur,160,Kanchanpur-3,RSP,Prem Bahadur Saud,FALSE
+Sudurpashchim,7,Kanchanpur,160,Kanchanpur-3,NC,Mohan Bahadur Thapa,FALSE
+Sudurpashchim,7,Kanchanpur,160,Kanchanpur-3,UML,Narayan Bahadur Bist,FALSE
+Sudurpashchim,7,Kanchanpur,160,Kanchanpur-3,NCP,Gopal Bahadur Bist,FALSE
+Sudurpashchim,7,Kanchanpur,160,Kanchanpur-3,RPP,Bikram Bahadur Bist,FALSE
