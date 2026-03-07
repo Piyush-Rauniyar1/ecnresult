@@ -18,20 +18,17 @@ interface ConstituencyWinner {
     votes: number;
 }
 
-interface DistrictData {
+interface ConstituencyData {
     district: string;
-    dominant_color: string;
-    dominant_party: string;
-    dominant_logo: string;
-    total_seats: number;
-    winners: ConstituencyWinner[];
+    constituency_number: number;
+    winner: ConstituencyWinner;
 }
 
 export default function WinnerMap() {
     const [geoData, setGeoData] = useState<any>(null);
-    const [districtData, setDistrictData] = useState<Record<string, DistrictData>>({});
+    const [constituencyData, setConstituencyData] = useState<Record<string, ConstituencyData>>({});
     const [loading, setLoading] = useState(true);
-    const [hoveredDistrict, setHoveredDistrict] = useState<any>(null);
+    const [hoveredPolygon, setHoveredPolygon] = useState<any>(null);
     const [transform, setTransform] = useState({ k: 1, x: 0, y: 0 });
     const svgRef = useRef<SVGSVGElement>(null);
     const zoomRef = useRef<any>(null);
@@ -39,8 +36,8 @@ export default function WinnerMap() {
     useEffect(() => {
         async function loadData() {
             try {
-                // 1. Fetch GeoJSON
-                const geoRes = await fetch('https://raw.githubusercontent.com/mesaugat/geoJSON-Nepal/master/nepal-districts-new.geojson');
+                // 1. Fetch 165 Constituency GeoJSON from public folder
+                const geoRes = await fetch('/nepal-165-constituencies.geojson');
                 const geo = await geoRes.json();
                 setGeoData(geo);
 
@@ -63,75 +60,62 @@ export default function WinnerMap() {
                     .eq('is_winner', true);
 
                 if (winners) {
-                    const grouped: Record<string, DistrictData> = {};
+                    const mapped: Record<string, ConstituencyData> = {};
 
-                    winners.forEach((w: any) => {
-                        const distName = w.constituencies?.districts?.name_en;
-                        const candidate = w.candidates;
-                        const party = candidate?.parties;
-                        const constId = w.constituencies?.id;
-                        const constNum = w.constituencies?.number;
-
-                        if (!distName || !constId) return;
-
-                        const key = distName.toLowerCase();
-                        if (!grouped[key]) {
-                            grouped[key] = {
-                                district: distName,
-                                dominant_color: '#f1f5f9',
-                                dominant_party: '',
-                                dominant_logo: '',
-                                total_seats: 0,
-                                winners: []
-                            };
-                        }
-
-                        grouped[key].winners.push({
-                            constituency_id: constId,
-                            constituency_number: constNum,
-                            candidate_name: candidate?.name_en || 'Unknown',
-                            candidate_photo: candidate?.photo_cloudinary_url || '',
-                            party_name: party?.name_en || 'Independent',
-                            party_color: party?.color_hex || '#6B7280',
-                            party_logo: party?.symbol_cloudinary_url || '',
-                            votes: w.votes || 0
-                        });
-                        grouped[key].total_seats = grouped[key].winners.length;
-                    });
-
-                    // Determine dominant party per district
-                    Object.values(grouped).forEach(dist => {
-                        const partyCounts: Record<string, { count: number; color: string; logo: string; name: string }> = {};
-                        dist.winners.forEach(w => {
-                            if (!partyCounts[w.party_name]) {
-                                partyCounts[w.party_name] = { count: 0, color: w.party_color, logo: w.party_logo, name: w.party_name };
-                            }
-                            partyCounts[w.party_name].count++;
-                        });
-                        const top = Object.values(partyCounts).sort((a, b) => b.count - a.count)[0];
-                        if (top) {
-                            dist.dominant_color = top.color;
-                            dist.dominant_party = top.name;
-                            dist.dominant_logo = top.logo;
-                        }
-                        // Sort winners by constituency number
-                        dist.winners.sort((a, b) => a.constituency_number - b.constituency_number);
-                    });
-
-                    // District name normalization
                     const NAME_ALIASES: Record<string, string> = {
                         'eastern rukum': 'rukum east',
                         'western rukum': 'rukum west',
                         'eastern nawalparasi': 'nawalparasi east',
                         'western nawalparasi': 'nawalparasi west',
+                        'chitawan': 'chitwan'
                     };
+
+                    winners.forEach((w: any) => {
+                        let distName = w.constituencies?.districts?.name_en?.toLowerCase();
+                        const candidate = w.candidates;
+                        const party = candidate?.parties;
+                        const constId = w.constituencies?.id;
+                        const constNum = w.constituencies?.number;
+
+                        if (!distName || !constId || !constNum) return;
+
+                        // Normalize mismatching district names (e.g. database has 'eastern rukum', geojson has 'rukum east')
+                        if (NAME_ALIASES[distName]) {
+                            distName = NAME_ALIASES[distName];
+                        }
+
+                        const defaultColor = '#6B7280';
+                        const key = `${distName}_${constNum}`;
+                        mapped[key] = {
+                            district: distName,
+                            constituency_number: constNum,
+                            winner: {
+                                constituency_id: constId,
+                                constituency_number: constNum,
+                                candidate_name: candidate?.name_en || 'Unknown',
+                                candidate_photo: candidate?.photo_cloudinary_url || '',
+                                party_name: party?.name_en || 'Independent',
+                                party_color: party?.color_hex || defaultColor,
+                                party_logo: party?.symbol_cloudinary_url || '',
+                                votes: w.votes || 0
+                            }
+                        };
+                    });
+
+                    // Add inverse alias support just in case GeoJSON uses DB names
                     Object.entries(NAME_ALIASES).forEach(([dbName, geoName]) => {
-                        if (grouped[dbName] && !grouped[geoName]) {
-                            grouped[geoName] = grouped[dbName];
+                        // For every constNum 1..5, mirror the key
+                        for (let i = 1; i <= 6; i++) {
+                            if (mapped[`${dbName}_${i}`] && !mapped[`${geoName}_${i}`]) {
+                                mapped[`${geoName}_${i}`] = mapped[`${dbName}_${i}`];
+                            }
+                            if (mapped[`${geoName}_${i}`] && !mapped[`${dbName}_${i}`]) {
+                                mapped[`${dbName}_${i}`] = mapped[`${geoName}_${i}`];
+                            }
                         }
                     });
 
-                    setDistrictData(grouped);
+                    setConstituencyData(mapped);
                 }
             } catch (err) {
                 console.error('Failed to load map data:', err);
@@ -179,15 +163,22 @@ export default function WinnerMap() {
         const pathGenerator = d3Geo.geoPath().projection(projection);
 
         return geoData.features.map((feature: any, i: number) => {
-            const districtName = feature.properties.DIST_EN || feature.properties.DISTRICT || feature.properties.name || '';
-            const data = districtData[districtName.toLowerCase()];
-            const fillColor = data ? data.dominant_color : '#f1f5f9';
+            let districtName = feature.properties.DIST_EN || feature.properties.DISTRICT || feature.properties.name || '';
+            districtName = districtName.toLowerCase();
+            const conNum = feature.properties.CON;
+
+            // Map alias cleanup directly on geojson reading
+            if (districtName === 'chitawan') districtName = 'chitwan';
+
+            const key = `${districtName}_${conNum}`;
+            const data = constituencyData[key];
+            const fillColor = data ? data.winner.party_color : '#f1f5f9';
             const centroid = pathGenerator.centroid(feature);
 
-            // Symbol
-            let symbolUrl = data?.dominant_logo || '';
+            // Determine Symbol to show on the physical polygon
+            let symbolUrl = data?.winner.party_logo || '';
             if (!symbolUrl && data) {
-                const name = data.dominant_party.toLowerCase();
+                const name = data.winner.party_name.toLowerCase();
                 if (name.includes('congress')) symbolUrl = '🌳';
                 else if (name.includes('swatantra') || name.includes('rsp')) symbolUrl = '🔔';
                 else if (name.includes('uml') || name.includes('communist party of nepal')) symbolUrl = '☀️';
@@ -195,41 +186,41 @@ export default function WinnerMap() {
             }
 
             return (
-                <g key={`${districtName}_${i}`}>
+                <g key={`${districtName}_${conNum}_${i}`}>
                     <path
                         d={pathGenerator(feature) || ''}
                         fill={fillColor}
                         stroke="#ffffff"
                         strokeWidth={0.5 / transform.k}
-                        className="cursor-pointer"
+                        className="cursor-pointer hover:opacity-90 transition-opacity"
                         onMouseEnter={(e) => {
-                            setHoveredDistrict({
-                                name: districtName,
+                            setHoveredPolygon({
+                                displayTitle: `${districtName.toUpperCase()} - ${conNum}`,
                                 data: data,
                                 x: e.clientX,
                                 y: e.clientY
                             });
                         }}
-                        onMouseLeave={() => setHoveredDistrict(null)}
+                        onMouseLeave={() => setHoveredPolygon(null)}
                     />
-                    {symbolUrl && centroid[0] && centroid[1] && (
+                    {symbolUrl && centroid[0] && centroid[1] && transform.k > 1.5 && ( // Only show symbols if zoomed in enough since polygons are tiny
                         <g transform={`translate(${centroid[0]},${centroid[1]})`}>
                             {symbolUrl.startsWith('http') ? (
                                 <image
                                     href={symbolUrl}
-                                    x={-7 / Math.sqrt(transform.k)}
-                                    y={-7 / Math.sqrt(transform.k)}
-                                    width={14 / Math.sqrt(transform.k)}
-                                    height={14 / Math.sqrt(transform.k)}
-                                    className="pointer-events-none opacity-90"
+                                    x={-4 / Math.sqrt(transform.k)}
+                                    y={-4 / Math.sqrt(transform.k)}
+                                    width={8 / Math.sqrt(transform.k)}
+                                    height={8 / Math.sqrt(transform.k)}
+                                    className="pointer-events-none opacity-80"
                                     preserveAspectRatio="xMidYMid meet"
                                 />
                             ) : (
                                 <text
                                     textAnchor="middle"
                                     dominantBaseline="central"
-                                    fontSize={10 / Math.sqrt(transform.k)}
-                                    className="pointer-events-none drop-shadow-sm"
+                                    fontSize={6 / Math.sqrt(transform.k)}
+                                    className="pointer-events-none drop-shadow-sm opacity-80"
                                 >
                                     {symbolUrl}
                                 </text>
@@ -239,14 +230,14 @@ export default function WinnerMap() {
                 </g>
             );
         });
-    }, [geoData, districtData, transform.k]);
+    }, [geoData, constituencyData, transform.k]);
 
     if (loading) {
         return (
             <div className="bg-white rounded-2xl border border-gray-100 p-8 h-[500px] flex items-center justify-center animate-pulse">
                 <div className="text-center">
                     <div className="w-12 h-12 border-4 border-indigo-600/30 border-t-indigo-600 rounded-full animate-spin mx-auto mb-4" />
-                    <p className="text-gray-400 font-medium">Loading election map...</p>
+                    <p className="text-gray-400 font-medium">Loading precise 165-constituency map...</p>
                 </div>
             </div>
         );
@@ -256,8 +247,8 @@ export default function WinnerMap() {
         <div className="relative bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden p-4">
             <div className="flex items-center justify-between mb-6 px-4">
                 <div>
-                    <h3 className="text-gray-900 font-black text-xl">Election Constituency Map</h3>
-                    <p className="text-gray-500 text-xs">Use +/− to zoom • Drag to pan • Hover for constituency winners</p>
+                    <h3 className="text-gray-900 font-black text-xl">165 Constituency Extent Map</h3>
+                    <p className="text-gray-500 text-xs">Use +/− to zoom • Drag to pan • Hover a seat for winner context</p>
                 </div>
                 <div className="flex gap-4">
                     <div className="flex items-center gap-2">
@@ -282,68 +273,46 @@ export default function WinnerMap() {
                 </div>
 
                 {/* Tooltip */}
-                {hoveredDistrict && (
+                {hoveredPolygon && (
                     <div
-                        className="fixed pointer-events-none bg-white/95 backdrop-blur-md border border-gray-200 p-3 rounded-xl shadow-2xl z-50 min-w-[220px] max-w-[300px]"
+                        className="fixed pointer-events-none bg-white/95 backdrop-blur-md border border-gray-200 p-3 rounded-xl shadow-2xl z-50 min-w-[200px]"
                         style={{
-                            left: Math.min(hoveredDistrict.x + 20, window.innerWidth - 320),
-                            top: Math.max(hoveredDistrict.y - 40, 10)
+                            left: Math.min(hoveredPolygon.x + 20, window.innerWidth - 240),
+                            top: Math.max(hoveredPolygon.y - 40, 10)
                         }}
                     >
-                        <p className="font-black text-gray-900 text-sm border-b pb-1.5 mb-2">{hoveredDistrict.name}</p>
-                        {hoveredDistrict.data ? (
-                            <div>
-                                {/* Constituency winners list */}
-                                <div className="space-y-1.5 max-h-[200px] overflow-y-auto">
-                                    {hoveredDistrict.data.winners.map((w: ConstituencyWinner) => (
-                                        <div key={w.constituency_id} className="flex items-center gap-2 py-0.5">
-                                            {w.candidate_photo ? (
-                                                <img src={w.candidate_photo} alt={w.candidate_name} className="w-7 h-7 rounded-full object-cover ring-1 ring-gray-200 flex-shrink-0" />
-                                            ) : (
-                                                <div className="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 text-[10px] font-bold flex-shrink-0">
-                                                    {w.candidate_name.charAt(0)}
-                                                </div>
-                                            )}
-                                            <div className="min-w-0 flex-1">
-                                                <p className="text-[11px] font-bold text-gray-900 truncate leading-tight">
-                                                    <span className="text-gray-400 font-medium">#{w.constituency_number}</span> {w.candidate_name}
-                                                </p>
-                                                <div className="flex items-center gap-1">
-                                                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: w.party_color }} />
-                                                    <p className="text-[9px] font-medium truncate" style={{ color: w.party_color }}>{w.party_name}</p>
-                                                </div>
-                                            </div>
-                                            {w.party_logo && w.party_logo.startsWith('http') && (
-                                                <img src={w.party_logo} alt="" className="w-4 h-4 object-contain flex-shrink-0 opacity-70" />
-                                            )}
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Summary */}
-                                <div className="flex items-center justify-between pt-2 mt-1.5 border-t border-gray-100">
-                                    <div className="flex items-center gap-1.5">
-                                        <span className="text-[10px] text-gray-500 font-medium">Leading:</span>
-                                        <div className="w-2 h-2 rounded-full" style={{ backgroundColor: hoveredDistrict.data.dominant_color }} />
-                                        <span className="text-[10px] font-bold" style={{ color: hoveredDistrict.data.dominant_color }}>
-                                            {hoveredDistrict.data.dominant_party}
-                                        </span>
+                        <p className="font-black text-gray-900 text-sm border-b pb-1.5 mb-2">{hoveredPolygon.displayTitle}</p>
+                        {hoveredPolygon.data ? (
+                            <div className="flex items-center gap-3 py-1">
+                                {hoveredPolygon.data.winner.candidate_photo ? (
+                                    <img src={hoveredPolygon.data.winner.candidate_photo} alt={hoveredPolygon.data.winner.candidate_name} className="w-10 h-10 rounded-full object-cover ring-2 ring-gray-100 flex-shrink-0" />
+                                ) : (
+                                    <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 font-bold flex-shrink-0">
+                                        {hoveredPolygon.data.winner.candidate_name.charAt(0)}
                                     </div>
-                                    <div className="text-[10px] text-gray-500 font-medium bg-gray-50 px-1.5 py-0.5 rounded border border-gray-100">
-                                        <strong className="text-gray-900">{hoveredDistrict.data.total_seats}</strong> seats declared
+                                )}
+                                <div className="min-w-0 flex-1">
+                                    <div className="flex items-center gap-1.5 mb-0.5">
+                                        <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: hoveredPolygon.data.winner.party_color }} />
+                                        <p className="text-[10px] font-bold truncate uppercase tracking-wide" style={{ color: hoveredPolygon.data.winner.party_color }}>
+                                            {hoveredPolygon.data.winner.party_name}
+                                        </p>
                                     </div>
+                                    <p className="text-xs font-bold text-gray-900 leading-tight">
+                                        {hoveredPolygon.data.winner.candidate_name}
+                                    </p>
                                 </div>
                             </div>
                         ) : (
-                            <p className="text-[10px] text-gray-400 italic">Counting in progress...</p>
+                            <p className="text-[10px] text-gray-400 italic">Counting in progress or Not declared...</p>
                         )}
                     </div>
                 )}
             </div>
 
             <div className="mt-4 px-4 pb-2 flex flex-wrap gap-x-6 gap-y-2">
-                {/* Legend */}
-                {Array.from(new Set(Object.values(districtData).map(d => JSON.stringify({ name: d.dominant_party, color: d.dominant_color, logo: d.dominant_logo }))))
+                {/* Generated Unique Parties Legend */}
+                {Array.from(new Set(Object.values(constituencyData).map(d => JSON.stringify({ name: d.winner.party_name, color: d.winner.party_color, logo: d.winner.party_logo }))))
                     .slice(0, 8)
                     .map(json => {
                         const p = JSON.parse(json);
@@ -352,7 +321,7 @@ export default function WinnerMap() {
                                 <div className="w-2.5 h-2.5 rounded-full shadow-sm" style={{ backgroundColor: p.color }} />
                                 <div className="flex items-center gap-1">
                                     {p.logo && p.logo.startsWith('http') ? (
-                                        <img src={p.logo} alt={p.name} className="w-4 h-4 object-contain" />
+                                        <img src={p.logo} alt={p.name} className="w-4 h-4 object-contain opacity-80" />
                                     ) : null}
                                     <span className="text-[10px] font-black text-gray-600 uppercase tracking-wider">{p.name}</span>
                                 </div>
