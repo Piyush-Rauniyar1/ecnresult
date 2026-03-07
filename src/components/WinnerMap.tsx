@@ -170,6 +170,9 @@ export default function WinnerMap() {
             districtName = districtName.toLowerCase();
             const conNum = feature.properties.CON;
 
+            // Skip rendering "National Parks" as it overlays and obscures actual constituencies like Chitwan
+            if (districtName.includes('national') || districtName.includes('park')) return null;
+
             const key = `${districtName}_${conNum}`;
             const data = constituencyData[key];
             const fillColor = data ? data.winner.party_color : '#f1f5f9';
