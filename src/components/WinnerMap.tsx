@@ -63,10 +63,10 @@ export default function WinnerMap() {
                     const mapped: Record<string, ConstituencyData> = {};
 
                     const NAME_ALIASES: Record<string, string> = {
-                        'eastern rukum': 'rukum east',
-                        'western rukum': 'rukum west',
-                        'eastern nawalparasi': 'nawalparasi east',
-                        'western nawalparasi': 'nawalparasi west',
+                        'eastern rukum': 'rukum_e',
+                        'western rukum': 'rukum_w',
+                        'eastern nawalparasi': 'nawalparasi_e',
+                        'western nawalparasi': 'nawalparasi_w',
                         'chitawan': 'chitwan'
                     };
 
