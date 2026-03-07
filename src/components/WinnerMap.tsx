@@ -321,14 +321,17 @@ export default function WinnerMap() {
                                 </div>
 
                                 {/* Summary */}
-                                <div className="flex items-center gap-2 pt-1.5 mt-1.5 border-t border-gray-100">
-                                    <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: hoveredDistrict.data.dominant_color }} />
-                                    <span className="text-[10px] font-bold" style={{ color: hoveredDistrict.data.dominant_color }}>
-                                        {hoveredDistrict.data.dominant_party}
-                                    </span>
-                                    <span className="text-[10px] text-gray-400 ml-auto">
-                                        {hoveredDistrict.data.total_seats} seat{hoveredDistrict.data.total_seats > 1 ? 's' : ''}
-                                    </span>
+                                <div className="flex items-center justify-between pt-2 mt-1.5 border-t border-gray-100">
+                                    <div className="flex items-center gap-1.5">
+                                        <span className="text-[10px] text-gray-500 font-medium">Leading:</span>
+                                        <div className="w-2 h-2 rounded-full" style={{ backgroundColor: hoveredDistrict.data.dominant_color }} />
+                                        <span className="text-[10px] font-bold" style={{ color: hoveredDistrict.data.dominant_color }}>
+                                            {hoveredDistrict.data.dominant_party}
+                                        </span>
+                                    </div>
+                                    <div className="text-[10px] text-gray-500 font-medium bg-gray-50 px-1.5 py-0.5 rounded border border-gray-100">
+                                        <strong className="text-gray-900">{hoveredDistrict.data.total_seats}</strong> seats declared
+                                    </div>
                                 </div>
                             </div>
                         ) : (
