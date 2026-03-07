@@ -222,10 +222,11 @@ export default function WinnerMap() {
                 {/* Tooltip */}
                 {hoveredPolygon && (
                     <div
-                        className="fixed pointer-events-none bg-white/95 backdrop-blur-md border border-gray-200 p-3 rounded-xl shadow-2xl z-50 min-w-[200px]"
+                        className="fixed pointer-events-none bg-white/95 backdrop-blur-md border border-gray-200 p-3 rounded-xl shadow-2xl min-w-[200px]"
                         style={{
                             left: Math.min(hoveredPolygon.x + 20, typeof window !== 'undefined' ? window.innerWidth - 240 : 1000),
-                            top: Math.max(hoveredPolygon.y - 40, 10)
+                            top: Math.max(hoveredPolygon.y - 40, 10),
+                            zIndex: 9999
                         }}
                     >
                         <p className="font-black text-gray-900 text-sm border-b pb-1.5 mb-2">{hoveredPolygon.displayTitle}</p>
