@@ -67,7 +67,7 @@ export default function WinnerMap() {
                         'western rukum': 'rukum_w',
                         'eastern nawalparasi': 'nawalparasi_e',
                         'western nawalparasi': 'nawalparasi_w',
-                        'chitawan': 'chitwan'
+                        'chitwan': 'chitawan'
                     };
 
                     winners.forEach((w: any) => {
