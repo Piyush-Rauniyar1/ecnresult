@@ -23,24 +23,39 @@ export default function EpicCenter() {
 
     useEffect(() => {
         async function fetchFeed() {
-            // Get latest 10 updated constituencies or declared ones
-            const { data: latest } = await supabaseBrowser
-                .from('constituencies')
-                .select(`
-                    id, name_en, status,
-                    results(
-                        is_winner, last_scraped_at,
-                        candidates(
-                            name_en,
-                            parties(name_en, color_hex)
-                        )
+            const selectQuery = `
+                id, name_en, status,
+                results(
+                    is_winner, last_scraped_at,
+                    candidates(
+                        name_en,
+                        parties(name_en, color_hex)
                     )
-                `)
-                .order('id', { ascending: false }) // Just as a placeholder for "recent updates" logic
-                .limit(8);
+                )
+            `;
 
-            if (latest) {
-                const items: FeedItem[] = latest.map((c: any) => {
+            const epicNames = ['Jhapa-5', 'Sunsari-1'];
+
+            const [epicRes, latestRes] = await Promise.all([
+                supabaseBrowser
+                    .from('constituencies')
+                    .select(selectQuery)
+                    .in('name_en', epicNames),
+                supabaseBrowser
+                    .from('constituencies')
+                    .select(selectQuery)
+                    .order('id', { ascending: false })
+                    .limit(6)
+            ]);
+
+            const combined = [...(epicRes.data || [])];
+            const epicIds = new Set(combined.map(c => c.id));
+            (latestRes.data || []).forEach(c => {
+                if (!epicIds.has(c.id)) combined.push(c);
+            });
+
+            if (combined.length > 0) {
+                const items: FeedItem[] = combined.slice(0, 8).map((c: any) => {
                     const winnerRow = c.results?.find((r: any) => r.is_winner);
                     return {
                         id: c.id,

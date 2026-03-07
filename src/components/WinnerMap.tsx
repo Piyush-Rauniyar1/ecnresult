@@ -115,6 +115,9 @@ export default function WinnerMap() {
                         }
                     });
 
+                    console.log("CHITWAN MAP DATA (GeoJSON Key):", mapped['chitawan_2']);
+                    console.log("CHITWAN MAP DATA (DB Key):", mapped['chitwan_2']);
+
                     setConstituencyData(mapped);
                 }
             } catch (err) {
