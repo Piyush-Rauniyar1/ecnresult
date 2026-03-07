@@ -12,6 +12,7 @@ interface FeedItem {
     updated_at: string;
     winner?: {
         name: string;
+        photo: string;
         party: string;
         color: string;
     };
@@ -28,7 +29,7 @@ export default function EpicCenter() {
                 results(
                     is_winner, last_scraped_at,
                     candidates(
-                        name_en,
+                        name_en, photo_cloudinary_url,
                         parties(name_en, color_hex)
                     )
                 )
@@ -68,6 +69,7 @@ export default function EpicCenter() {
                         updated_at: c.results?.[0]?.last_scraped_at || new Date().toISOString(),
                         winner: winnerRow ? {
                             name: winnerRow.candidates.name_en,
+                            photo: winnerRow.candidates.photo_cloudinary_url,
                             party: winnerRow.candidates.parties?.name_en,
                             color: winnerRow.candidates.parties?.color_hex || '#4f46e5'
                         } : undefined
@@ -121,12 +123,18 @@ export default function EpicCenter() {
                         </div>
 
                         {item.status === 'declared' && item.winner ? (
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                                <span className="text-xs font-semibold text-gray-600 truncate">
-                                    Won by <span className="text-gray-900 font-black">{item.winner.name}</span>
+                            <div className="flex items-center gap-2 mt-1">
+                                {item.winner.photo ? (
+                                    <img src={item.winner.photo} alt={item.winner.name} className="w-6 h-6 rounded-full object-cover ring-1 ring-gray-100 flex-shrink-0" />
+                                ) : (
+                                    <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 font-bold text-[10px] flex-shrink-0">
+                                        {item.winner.name.charAt(0)}
+                                    </div>
+                                )}
+                                <span className="text-xs font-semibold text-gray-600 truncate flex-1">
+                                    <span className="text-emerald-500 mr-1 text-[10px]">✔</span> Won by <span className="text-gray-900 font-black">{item.winner.name}</span>
                                 </span>
-                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: item.winner.color }} />
+                                <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: item.winner.color }} />
                             </div>
                         ) : (
                             <div className="flex items-center gap-2">
