@@ -167,9 +167,6 @@ export default function WinnerMap() {
             districtName = districtName.toLowerCase();
             const conNum = feature.properties.CON;
 
-            // Map alias cleanup directly on geojson reading
-            if (districtName === 'chitawan') districtName = 'chitwan';
-
             const key = `${districtName}_${conNum}`;
             const data = constituencyData[key];
             const fillColor = data ? data.winner.party_color : '#f1f5f9';
