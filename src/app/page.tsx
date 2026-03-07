@@ -5,7 +5,7 @@ import WinnerMap from '@/components/WinnerMap';
 import EpicCenter from '@/components/EpicCenter';
 import { supabase } from '@/lib/supabase';
 
-export const revalidate = 30;
+export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const { count: declaredCount } = await supabase
