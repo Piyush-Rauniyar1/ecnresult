@@ -4,6 +4,7 @@ import NationalProgressChart from '@/components/NationalProgressChart';
 import dynamicImport from 'next/dynamic';
 
 const WinnerMap = dynamicImport(() => import('@/components/WinnerMap'), { ssr: false });
+const SeatMap = dynamicImport(() => import('@/components/SeatMap'), { ssr: false });
 
 import EpicCenter from '@/components/EpicCenter';
 import { supabase } from '@/lib/supabase';
@@ -121,8 +122,13 @@ export default async function Home() {
         </div>
 
         {/* ── Party Standings (live from Supabase) ── */}
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-6 mb-8">
           <PartyStandings />
+        </div>
+
+        {/* ── Seat Map (Parliament Style) ── */}
+        <div className="grid grid-cols-1 gap-6">
+          <SeatMap />
         </div>
 
       </div>

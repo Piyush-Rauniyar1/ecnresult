@@ -18,8 +18,20 @@ interface FeedItem {
     };
 }
 
+interface CountingSummary {
+    total: number;
+    declared: number;
+    stillCounting: number;
+    constituencies: Array<{
+        id: number;
+        name_en: string;
+        status: string;
+    }>;
+}
+
 export default function EpicCenter() {
     const [feed, setFeed] = useState<FeedItem[]>([]);
+    const [countingSummary, setCountingSummary] = useState<CountingSummary | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -35,32 +47,32 @@ export default function EpicCenter() {
                 )
             `;
 
-            const epicNames = [
-                'Jhapa-5', 'Sunsari-1', 'Gulmi-1', 'Bhaktapur-2',
-                'Rautahat-1', 'Lalitpur-3', 'Siraha-1', 'Tanahun-1',
-                'Gorkha-1', 'Sarlahi-4'
-            ];
+            // Fetch ALL counting constituencies with their results
+            const { data: countingData, error: countingError } = await supabaseBrowser
+                .from('constituencies')
+                .select(selectQuery)
+                .neq('status', 'declared')
+                .order('id');
 
-            const [epicRes, latestRes] = await Promise.all([
-                supabaseBrowser
+            if (!countingError && countingData) {
+                const { count: totalCount } = await supabaseBrowser
                     .from('constituencies')
-                    .select(selectQuery)
-                    .in('name_en', epicNames),
-                supabaseBrowser
+                    .select('*', { count: 'exact', head: true });
+
+                const { count: declaredCount } = await supabaseBrowser
                     .from('constituencies')
-                    .select(selectQuery)
-                    .order('id', { ascending: false })
-                    .limit(10) // fetch more latest to fill in gaps
-            ]);
+                    .select('*', { count: 'exact', head: true })
+                    .eq('status', 'declared');
 
-            const combined = [...(epicRes.data || [])];
-            const epicIds = new Set(combined.map(c => c.id));
-            (latestRes.data || []).forEach(c => {
-                if (!epicIds.has(c.id)) combined.push(c);
-            });
+                setCountingSummary({
+                    total: totalCount || 165,
+                    declared: declaredCount || 0,
+                    stillCounting: countingData.length,
+                    constituencies: countingData.map(c => ({ id: c.id, name_en: c.name_en, status: c.status }))
+                });
 
-            if (combined.length > 0) {
-                const items: FeedItem[] = combined.slice(0, 12).map((c: any) => {
+                // Transform counting data to feed items
+                const items: FeedItem[] = countingData.map((c: any) => {
                     const winnerRow = c.results?.find((r: any) => r.is_winner);
                     return {
                         id: c.id,
@@ -105,6 +117,26 @@ export default function EpicCenter() {
                 <span className="text-[10px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">Live Updates</span>
             </div>
 
+            {/* Counting Summary */}
+            {countingSummary && (
+                <div className="px-6 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-100">
+                    <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-bold text-gray-700">Vote Counting Progress</span>
+                        <span className="text-xs text-gray-500">{countingSummary.stillCounting} of {countingSummary.total} remaining</span>
+                    </div>
+                    <div className="flex items-center gap-4 text-xs">
+                        <div className="flex items-center gap-1">
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span className="text-gray-600">Declared: {countingSummary.declared}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                            <span className="text-gray-600">Counting: {countingSummary.stillCounting}</span>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <div className="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar">
                 {feed.map((item) => (
                     <Link
@@ -122,32 +154,23 @@ export default function EpicCenter() {
                             </div>
                         </div>
 
-                        {item.status === 'declared' && item.winner ? (
-                            <div className="flex items-center gap-2 mt-1">
-                                {item.winner.photo ? (
-                                    <img src={item.winner.photo} alt={item.winner.name} className="w-6 h-6 rounded-full object-cover ring-1 ring-gray-100 flex-shrink-0" />
-                                ) : (
-                                    <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 font-bold text-[10px] flex-shrink-0">
-                                        {item.winner.name.charAt(0)}
-                                    </div>
-                                )}
-                                <span className="text-xs font-semibold text-gray-600 truncate flex-1">
-                                    <span className="text-emerald-500 mr-1 text-[10px]">✔</span> Won by <span className="text-gray-900 font-black">{item.winner.name}</span>
-                                </span>
-                                <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: item.winner.color }} />
-                            </div>
-                        ) : (
-                            <div className="flex items-center gap-2">
-                                <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-                                <span className="text-[10px] font-bold text-blue-500 uppercase tracking-tight">Counting in Progress</span>
-                            </div>
-                        )}
+                        <div className="flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
+                            <span className="text-[10px] font-bold text-blue-500 uppercase tracking-tight">Counting in Progress</span>
+                        </div>
                     </Link>
                 ))}
             </div>
 
             <div className="p-4 bg-gray-50/50 border-t border-gray-50">
-                <p className="text-[10px] text-gray-400 text-center font-medium uppercase tracking-widest">Showing latest 8 activities</p>
+                <div className="text-center">
+                    <p className="text-[10px] text-gray-400 font-medium uppercase tracking-widest">All constituencies being counted</p>
+                    {countingSummary && (
+                        <p className="text-[9px] text-gray-500 mt-1">
+                            Total: {countingSummary.stillCounting} active counts
+                        </p>
+                    )}
+                </div>
             </div>
         </div>
     );

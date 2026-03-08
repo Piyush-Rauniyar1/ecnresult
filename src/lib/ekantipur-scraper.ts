@@ -157,6 +157,18 @@ async function upsertResult(supabase: SupabaseClient, candidateId: number, const
     });
 }
 
+// ─── Correct URLs for the 8 target constituencies ──────────────────────────────
+const CORRECT_URLS: { [constId: number]: string } = {
+    3: 'https://election.ekantipur.com/pradesh-1/district-illam/constituency-1?lng=eng',      // Ilam-1
+    4: 'https://election.ekantipur.com/pradesh-1/district-illam/constituency-2?lng=eng',      // Ilam-2
+    26: 'https://election.ekantipur.com/pradesh-1/district-terhathum/constituency-1?lng=eng', // Tehrathum-1
+    33: 'https://election.ekantipur.com/pradesh-2/district-dhanusa/constituency-1?lng=eng',   // Dhanusha-1
+    34: 'https://election.ekantipur.com/pradesh-2/district-dhanusa/constituency-2?lng=eng',   // Dhanusha-2
+    35: 'https://election.ekantipur.com/pradesh-2/district-dhanusa/constituency-3?lng=eng',   // Dhanusha-3
+    36: 'https://election.ekantipur.com/pradesh-2/district-dhanusa/constituency-4?lng=eng',   // Dhanusha-4
+    68: 'https://election.ekantipur.com/pradesh-3/district-dolkha/constituency-1?lng=eng',    // Dolakha-1
+};
+
 // ─── Scraper Core ─────────────────────────────────────────────────────────────
 
 export async function scrapeConstituency(supabase: SupabaseClient, c: any) {
@@ -175,7 +187,30 @@ export async function scrapeConstituency(supabase: SupabaseClient, c: any) {
     const shortPath = `${provSlug}/${distSlug}/constituency-${c.number}`;
 
     try {
-        const url = `https://election.ekantipur.com/${shortPath}?lng=eng`;
+        // ─── CLEAR OLD DATA BEFORE SCRAPING ─────────────────────────────────────
+        // Delete all old candidates and results for this constituency
+        const { data: oldCandidates } = await supabase
+            .from('candidates')
+            .select('id')
+            .eq('constituency_id', c.id);
+
+        if (oldCandidates && oldCandidates.length > 0) {
+            const candidateIds = oldCandidates.map(c => c.id);
+            
+            // Delete results for these candidates
+            await supabase.from('results').delete().in('candidate_id', candidateIds);
+            
+            // Delete vote snapshots for these candidates
+            await supabase.from('vote_snapshots').delete().in('candidate_id', candidateIds);
+            
+            // Delete the candidates themselves
+            await supabase.from('candidates').delete().in('id', candidateIds);
+        }
+
+        // ─── SCRAPE FRESH DATA ────────────────────────────────────────────────────
+        // Use correct hardcoded URL for the 8 target constituencies, otherwise build it
+        const url = CORRECT_URLS[c.id] || `https://election.ekantipur.com/${shortPath}?lng=eng`;
+        
         const res = await fetch(url, {
             headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36', 'Accept': 'text/html' },
             signal: AbortSignal.timeout(15000),

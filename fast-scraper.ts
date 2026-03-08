@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { runSingleScrape } from './src/lib/ekantipur-scraper';
 import { createClient } from '@supabase/supabase-js';
 

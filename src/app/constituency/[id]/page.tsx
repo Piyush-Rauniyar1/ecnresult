@@ -104,6 +104,30 @@ export default function ConstituencyPage({ params }: { params: { id: string } })
     useEffect(() => {
         fetchData();
 
+        // Auto-refresh data every 10 seconds
+        const dataRefreshInterval = setInterval(async () => {
+            console.log('[AUTO-REFRESH] Fetching latest data...');
+            await fetchData();
+        }, 10000);
+
+        // Trigger realtime scrape every 30 seconds for the 8 target constituencies
+        const realtimeScrapeInterval = setInterval(async () => {
+            const targetConstituencies = [3, 4, 26, 33, 34, 35, 36, 68]; // Ilam-1, Ilam-2, Tehrathum-1, Dhanusha-1-4, Dolakha-1
+            
+            // Only trigger if this page is one of the target constituencies
+            if (targetConstituencies.includes(Number(params.id))) {
+                try {
+                    console.log('[REALTIME-SCRAPE] Triggering realtime scrape...');
+                    const res = await fetch('/api/scrape/realtime');
+                    if (res.ok) {
+                        console.log('[REALTIME-SCRAPE] Scrape completed, refreshing UI...');
+                    }
+                } catch (error) {
+                    console.error('[REALTIME-SCRAPE] Error:', error);
+                }
+            }
+        }, 30000);
+
         // Subscribe to realtime updates
         const channel = supabaseBrowser
             .channel(`results-${params.id}`)
@@ -113,6 +137,10 @@ export default function ConstituencyPage({ params }: { params: { id: string } })
                 table: 'results',
                 filter: `constituency_id=eq.${params.id}`
             }, (payload) => {
+                console.log('[REALTIME] Data changed, updating UI...');
+                // Refresh data when changes are detected
+                fetchData();
+            }, payload => {
                 // Optimistically update the UI inline
                 setResults(prev => {
                     const newRes = [...prev];
@@ -128,7 +156,11 @@ export default function ConstituencyPage({ params }: { params: { id: string } })
             })
             .subscribe();
 
-        return () => { supabaseBrowser.removeChannel(channel); };
+        return () => { 
+            clearInterval(dataRefreshInterval);
+            clearInterval(realtimeScrapeInterval);
+            supabaseBrowser.removeChannel(channel); 
+        };
     }, [params.id]);
 
     if (!constituency) {
