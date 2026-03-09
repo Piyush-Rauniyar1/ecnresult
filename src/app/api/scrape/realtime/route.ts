@@ -5,7 +5,7 @@ export const maxDuration = 300; // 5 minutes max
 export const dynamic = 'force-dynamic';
 
 // The 8 constituencies to continuously scrape
-const TARGET_CONSTITUENCIES = [3, 4, 19, 26, 33, 34, 35, 36, 68, 85, 84, 93, 37, 96, 127, 128, 121, 149]; // All 18 active constituencies
+const TARGET_CONSTITUENCIES = [3, 4, 19, 26, 33, 34, 35, 36, 68, 85, 84, 93, 37, 96, 127, 128, 121, 149, 9, 79, 111, 124, 125, 126]; // All 24 active constituencies
 
 export async function GET(request: Request) {
     try {

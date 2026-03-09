@@ -178,7 +178,13 @@ const CORRECT_URLS: { [constId: number]: string } = {
     128: 'https://election.ekantipur.com/pradesh-4/district-nawalparasieast/constituency-2?lng=eng', // Parasi-2
     121: 'https://election.ekantipur.com/pradesh-5/district-rukumeast/constituency-1?lng=eng',  // Eastern Rukum-1
     149: 'https://election.ekantipur.com/pradesh-6/district-rukumwest/constituency-1?lng=eng',  // Western Rukum-1
-};
+    // Additional constituencies for better coverage
+    9: 'https://election.ekantipur.com/pradesh-1/district-jhapa/constituency-5?lng=eng',      // Jhapa-5
+    79: 'https://election.ekantipur.com/pradesh-3/district-kavrepalanchowk/constituency-1?lng=eng', // Kavrepalanchok-1
+    111: 'https://election.ekantipur.com/pradesh-4/district-tanahun/constituency-2?lng=eng',   // Tanahu-2
+    124: 'https://election.ekantipur.com/pradesh-5/district-kapilbastu/constituency-1?lng=eng', // Kapilvastu-1
+    125: 'https://election.ekantipur.com/pradesh-5/district-kapilbastu/constituency-2?lng=eng', // Kapilvastu-2
+    126: 'https://election.ekantipur.com/pradesh-5/district-kapilbastu/constituency-3?lng=eng', // Kapilvastu-3
 
 // ─── Scraper Core ─────────────────────────────────────────────────────────────
 

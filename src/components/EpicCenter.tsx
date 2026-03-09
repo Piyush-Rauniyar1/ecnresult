@@ -37,7 +37,7 @@ export default function EpicCenter() {
     useEffect(() => {
         async function fetchFeed() {
             // Active constituencies being scraped (16 total)
-            const activeConstituencies = [3, 4, 19, 26, 33, 34, 35, 36, 68, 85, 84, 93, 37, 96, 127, 128, 121, 149];
+            const activeConstituencies = [3, 4, 19, 26, 33, 34, 35, 36, 68, 85, 84, 93, 37, 96, 127, 128, 121, 149, 9, 79, 111, 124, 125, 126];
             
             const selectQuery = `
                 id, name_en, status,
