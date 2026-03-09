@@ -161,7 +161,7 @@ async function upsertResult(supabase: SupabaseClient, candidateId: number, const
 const CORRECT_URLS: { [constId: number]: string } = {
     3: 'https://election.ekantipur.com/pradesh-1/district-illam/constituency-1?lng=eng',      // Ilam-1
     4: 'https://election.ekantipur.com/pradesh-1/district-illam/constituency-2?lng=eng',      // Ilam-2
-    9: 'https://election.ekantipur.com/pradesh-1/district-sankhuwasabha/constituency-1?lng=eng', // Sankhuwasabha-1
+    19: 'https://election.ekantipur.com/pradesh-1/district-sankhuwasabha/constituency-1?lng=eng', // Sankhuwasabha-1
     26: 'https://election.ekantipur.com/pradesh-1/district-terhathum/constituency-1?lng=eng', // Tehrathum-1
     33: 'https://election.ekantipur.com/pradesh-2/district-dhanusa/constituency-1?lng=eng',   // Dhanusha-1
     34: 'https://election.ekantipur.com/pradesh-2/district-dhanusa/constituency-2?lng=eng',   // Dhanusha-2

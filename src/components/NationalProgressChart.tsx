@@ -25,7 +25,7 @@ export default function NationalProgressChart() {
     const [loading, setLoading] = useState(true);
 
     // Active constituencies being monitored (18 total)
-    const activeConstituencies = [3, 4, 9, 26, 33, 34, 35, 36, 68, 85, 84, 93, 37, 96, 127, 128, 121, 149];
+    const activeConstituencies = [3, 4, 19, 26, 33, 34, 35, 36, 68, 85, 84, 93, 37, 96, 127, 128, 121, 149];
 
     useEffect(() => {
         async function fetchProgress() {
