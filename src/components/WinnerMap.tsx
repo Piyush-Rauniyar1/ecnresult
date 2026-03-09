@@ -55,16 +55,100 @@ export default function WinnerMap() {
                 if (winners) {
                     const mapped: Record<string, ConstituencyData> = {};
 
-                    const NAME_ALIASES: Record<string, string> = {
+                    // Normalize database district names to geojson format
+                    const DB_TO_GEO_NAMES: Record<string, string> = {
+                        // Ilam variants
+                        'ilam': 'ilam',
+                        'illam': 'ilam',
+                        
+                        // Terhathum variants
+                        'tehrathum': 'terhathum',
+                        'terhathum': 'terhathum',
+                        
+                        // Dhanusha
+                        'dhanusha': 'dhanusha',
+                        
+                        // Dolakha
+                        'dolakha': 'dolakha',
+                        
+                        // Makawanpur variants
+                        'makwanpur': 'makawanpur',
+                        'makawanpur': 'makawanpur',
+                        'mak wanpur': 'makawanpur',
+                        'mak-wanpur': 'makawanpur',
+                        
+                        // Sindhupalchok variants
+                        'sindhupalchok': 'sindhupalchok',
+                        'sindhuli': 'sindhuli',
+                        'sindhulpalchok': 'sindhupalchok',
+                        
+                        // Kabhrepalanchok variants
+                        'kabhrepalanchok': 'kabhrepalanchok',
+                        'kabhre palanchok': 'kabhrepalanchok',
+                        'kabhre-palanchok': 'kabhrepalanchok',
+                        
+                        // Sankhuwasabha variants
+                        'sankhuwasabha': 'sankhuwasabha',
+                        'sankhwa sabha': 'sankhuwasabha',
+                        'sankhwa-sabha': 'sankhuwasabha',
+                        'sankhu wasabha': 'sankhuwasabha',
+                        'sankhu-wasabha': 'sankhuwasabha',
+                        
+                        // Tanahu variants
+                        'tanahu': 'tanahu',
+                        'tanah u': 'tanahu',
+                        'tanah-u': 'tanahu',
+                        
+                        // Gorkha
+                        'gorkha': 'gorkha',
+                        
+                        // Parsa variants
+                        'parasi': 'parsa',
+                        'parsa': 'parsa',
+                        'nawalparasi': 'parsa',
+                        
+                        // Rukum variants
                         'eastern rukum': 'rukum_e',
+                        'rukum east': 'rukum_e',
+                        'rukum eastern': 'rukum_e',
+                        'rukum_e': 'rukum_e',
+                        'rukum-e': 'rukum_e',
+                        'eastern-rukum': 'rukum_e',
+                        'west rukum': 'rukum_w',
                         'western rukum': 'rukum_w',
+                        'rukum west': 'rukum_w',
+                        'rukum western': 'rukum_w',
+                        'rukum_w': 'rukum_w',
+                        'rukum-w': 'rukum_w',
+                        'western-rukum': 'rukum_w',
+                        
+                        // Nawalparasi variants
+                        'nawalparasi east': 'nawalparasi_e',
                         'eastern nawalparasi': 'nawalparasi_e',
+                        'nawalparasi_e': 'nawalparasi_e',
+                        'nawalparasi-e': 'nawalparasi_e',
+                        'nawalparasi eastern': 'nawalparasi_e',
+                        'nawal parasi east': 'nawalparasi_e',
+                        'nawal-parasi-east': 'nawalparasi_e',
+                        'nawal-parasi eastern': 'nawalparasi_e',
+                        'nawalparasi west': 'nawalparasi_w',
                         'western nawalparasi': 'nawalparasi_w',
-                        'chitwan': 'chitawan'
+                        'nawalparasi_w': 'nawalparasi_w',
+                        'nawalparasi-w': 'nawalparasi_w',
+                        'nawalparasi western': 'nawalparasi_w',
+                        'nawal parasi west': 'nawalparasi_w',
+                        'nawal-parasi-west': 'nawalparasi_w',
+                        'nawal-parasi western': 'nawalparasi_w',
+                        
+                        // Chitwan variants
+                        'chitwan': 'chitawan',
+                        'chitawan': 'chitawan',
+                        'chit wan': 'chitawan',
+                        'chit-wan': 'chitawan'
                     };
 
                     winners.forEach((w: any) => {
-                        let distName = w.constituencies?.districts?.name_en?.toLowerCase();
+                        let distName = w.constituencies?.districts?.name_en || '';
                         const candidate = w.candidates;
                         const party = candidate?.parties;
                         const constId = w.constituencies?.id;
@@ -72,14 +156,16 @@ export default function WinnerMap() {
 
                         if (!distName || !constId || !constNum) return;
 
-                        if (NAME_ALIASES[distName]) {
-                            distName = NAME_ALIASES[distName];
-                        }
+                        // Normalize: lowercase, trim, then normalize spaces/dashes
+                        distName = distName.toLowerCase().trim().replace(/[-\s]+/g, ' ');
+
+                        // Convert to geojson name
+                        const geoDistName = DB_TO_GEO_NAMES[distName] || distName.replace(/\s+/g, '_');
 
                         const defaultColor = '#6B7280';
-                        const key = `${distName}_${constNum}`;
+                        const key = `${geoDistName}_${constNum}`;
                         mapped[key] = {
-                            district: distName,
+                            district: geoDistName,
                             constituency_number: constNum,
                             winner: {
                                 constituency_id: constId,
@@ -92,17 +178,6 @@ export default function WinnerMap() {
                                 votes: w.votes || 0
                             }
                         };
-                    });
-
-                    Object.entries(NAME_ALIASES).forEach(([dbName, geoName]) => {
-                        for (let i = 1; i <= 6; i++) {
-                            if (mapped[`${dbName}_${i}`] && !mapped[`${geoName}_${i}`]) {
-                                mapped[`${geoName}_${i}`] = mapped[`${dbName}_${i}`];
-                            }
-                            if (mapped[`${geoName}_${i}`] && !mapped[`${dbName}_${i}`]) {
-                                mapped[`${dbName}_${i}`] = mapped[`${geoName}_${i}`];
-                            }
-                        }
                     });
 
                     setConstituencyData(mapped);
@@ -118,7 +193,7 @@ export default function WinnerMap() {
 
     const getFeatureStyle = (feature: any) => {
         let districtName = feature.properties.DIST_EN || feature.properties.DISTRICT || feature.properties.name || '';
-        districtName = districtName.toLowerCase();
+        districtName = districtName.toLowerCase().trim().replace(/[-\s]+/g, ' ');
         const conNum = feature.properties.CON;
 
         if (districtName.includes('national') || districtName.includes('park')) {
@@ -140,7 +215,7 @@ export default function WinnerMap() {
 
     const onEachFeature = (feature: any, layer: any) => {
         let districtName = feature.properties.DIST_EN || feature.properties.DISTRICT || feature.properties.name || '';
-        districtName = districtName.toLowerCase();
+        districtName = districtName.toLowerCase().trim().replace(/[-\s]+/g, ' ');
         const conNum = feature.properties.CON;
 
         if (districtName.includes('national') || districtName.includes('park')) return;

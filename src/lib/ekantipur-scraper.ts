@@ -161,12 +161,23 @@ async function upsertResult(supabase: SupabaseClient, candidateId: number, const
 const CORRECT_URLS: { [constId: number]: string } = {
     3: 'https://election.ekantipur.com/pradesh-1/district-illam/constituency-1?lng=eng',      // Ilam-1
     4: 'https://election.ekantipur.com/pradesh-1/district-illam/constituency-2?lng=eng',      // Ilam-2
+    9: 'https://election.ekantipur.com/pradesh-1/district-sankhuwasabha/constituency-1?lng=eng', // Sankhuwasabha-1
     26: 'https://election.ekantipur.com/pradesh-1/district-terhathum/constituency-1?lng=eng', // Tehrathum-1
     33: 'https://election.ekantipur.com/pradesh-2/district-dhanusa/constituency-1?lng=eng',   // Dhanusha-1
     34: 'https://election.ekantipur.com/pradesh-2/district-dhanusa/constituency-2?lng=eng',   // Dhanusha-2
     35: 'https://election.ekantipur.com/pradesh-2/district-dhanusa/constituency-3?lng=eng',   // Dhanusha-3
     36: 'https://election.ekantipur.com/pradesh-2/district-dhanusa/constituency-4?lng=eng',   // Dhanusha-4
     68: 'https://election.ekantipur.com/pradesh-3/district-dolkha/constituency-1?lng=eng',    // Dolakha-1
+    // Additional constituencies
+    85: 'https://election.ekantipur.com/pradesh-3/district-makwanpur/constituency-1?lng=eng',   // Makwanpur-1
+    84: 'https://election.ekantipur.com/pradesh-3/district-makwanpur/constituency-2?lng=eng',   // Makwanpur-2
+    93: 'https://election.ekantipur.com/pradesh-3/district-sindhupalchowk/constituency-2?lng=eng', // Sindhupalchok-2
+    37: 'https://election.ekantipur.com/pradesh-4/district-gorkha/constituency-1?lng=eng',   // Gorkha-1
+    96: 'https://election.ekantipur.com/pradesh-4/district-gorkha/constituency-2?lng=eng',   // Gorkha-2
+    127: 'https://election.ekantipur.com/pradesh-4/district-nawalparasieast/constituency-1?lng=eng', // Parasi-1
+    128: 'https://election.ekantipur.com/pradesh-4/district-nawalparasieast/constituency-2?lng=eng', // Parasi-2
+    121: 'https://election.ekantipur.com/pradesh-5/district-rukumeast/constituency-1?lng=eng',  // Eastern Rukum-1
+    149: 'https://election.ekantipur.com/pradesh-6/district-rukumwest/constituency-1?lng=eng',  // Western Rukum-1
 };
 
 // ─── Scraper Core ─────────────────────────────────────────────────────────────

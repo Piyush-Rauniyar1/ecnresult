@@ -11,6 +11,9 @@ interface Constituency { id: number; name_en: string; district_id: number; numbe
 export default function ConstituencySelector() {
     const router = useRouter();
 
+    // Active constituencies being scraped (18 total)
+    const activeConstituencies = [3, 4, 9, 26, 33, 34, 35, 36, 68, 85, 84, 93, 37, 96, 127, 128, 121, 149];
+
     const [provinces, setProvinces] = useState<Province[]>([]);
     const [districts, setDistricts] = useState<District[]>([]);
     const [constituencies, setConstituencies] = useState<Constituency[]>([]);
@@ -35,7 +38,11 @@ export default function ConstituencySelector() {
 
     useEffect(() => {
         if (selDist) {
-            supabaseBrowser.from('constituencies').select('*').eq('district_id', selDist).order('number')
+            supabaseBrowser.from('constituencies')
+                .select('*')
+                .eq('district_id', selDist)
+                .in('id', activeConstituencies)
+                .order('number')
                 .then(({ data }) => { if (data) setConstituencies(data); });
             setSelConst('');
         }

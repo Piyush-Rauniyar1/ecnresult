@@ -24,13 +24,17 @@ export default function NationalProgressChart() {
     const [data, setData] = useState<ProgressData[]>([]);
     const [loading, setLoading] = useState(true);
 
+    // Active constituencies being monitored (18 total)
+    const activeConstituencies = [3, 4, 9, 26, 33, 34, 35, 36, 68, 85, 84, 93, 37, 96, 127, 128, 121, 149];
+
     useEffect(() => {
         async function fetchProgress() {
-            // Fetch all winners from declared constituencies
+            // Fetch all winners from active constituencies
             const { data: results } = await supabaseBrowser
                 .from('results')
-                .select('last_scraped_at, constituencies(status)')
+                .select('last_scraped_at, constituency_id, constituencies(status)')
                 .eq('is_winner', true)
+                .in('constituency_id', activeConstituencies)
                 .order('last_scraped_at', { ascending: true });
 
             if (results) {

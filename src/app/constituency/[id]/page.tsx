@@ -110,9 +110,9 @@ export default function ConstituencyPage({ params }: { params: { id: string } })
             await fetchData();
         }, 10000);
 
-        // Trigger realtime scrape every 30 seconds for the 8 target constituencies
+        // Trigger realtime scrape every 30 seconds for the active target constituencies
         const realtimeScrapeInterval = setInterval(async () => {
-            const targetConstituencies = [3, 4, 26, 33, 34, 35, 36, 68]; // Ilam-1, Ilam-2, Tehrathum-1, Dhanusha-1-4, Dolakha-1
+            const targetConstituencies = [3, 4, 9, 26, 33, 34, 35, 36, 68, 85, 84, 93, 37, 96, 127, 128, 121, 149]; // All 18 active constituencies
             
             // Only trigger if this page is one of the target constituencies
             if (targetConstituencies.includes(Number(params.id))) {

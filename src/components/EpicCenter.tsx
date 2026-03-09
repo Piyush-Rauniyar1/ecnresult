@@ -36,6 +36,9 @@ export default function EpicCenter() {
 
     useEffect(() => {
         async function fetchFeed() {
+            // Active constituencies being scraped (16 total)
+            const activeConstituencies = [3, 4, 9, 26, 33, 34, 35, 36, 68, 85, 84, 93, 37, 96, 127, 128, 121, 149];
+            
             const selectQuery = `
                 id, name_en, status,
                 results(
@@ -47,25 +50,24 @@ export default function EpicCenter() {
                 )
             `;
 
-            // Fetch ALL counting constituencies with their results
+            // Fetch ONLY active constituencies
             const { data: countingData, error: countingError } = await supabaseBrowser
                 .from('constituencies')
                 .select(selectQuery)
+                .in('id', activeConstituencies)
                 .neq('status', 'declared')
                 .order('id');
 
             if (!countingError && countingData) {
-                const { count: totalCount } = await supabaseBrowser
-                    .from('constituencies')
-                    .select('*', { count: 'exact', head: true });
-
+                // Get declared count from active constituencies only
                 const { count: declaredCount } = await supabaseBrowser
                     .from('constituencies')
                     .select('*', { count: 'exact', head: true })
+                    .in('id', activeConstituencies)
                     .eq('status', 'declared');
 
                 setCountingSummary({
-                    total: totalCount || 165,
+                    total: activeConstituencies.length,
                     declared: declaredCount || 0,
                     stillCounting: countingData.length,
                     constituencies: countingData.map(c => ({ id: c.id, name_en: c.name_en, status: c.status }))
